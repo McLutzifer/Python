@@ -67,29 +67,16 @@ digits = [one, two, three, four, five, six, seven, eight, nine, zero]
 row_of_numbers = []
 i = 0
 while i < 33:       # 27 characters + 9 spaces = 36 digits 
-    print(line_1[i:i+3])
-    print(line_2[i:i+3])
-    print(line_3[i:i+3])
-
-
     temp = []
 
     temp.append(line_1[i:i+3])
     temp.append(line_2[i:i+3])
     temp.append(line_3[i:i+3])
 
-    print(temp)
-
-    if temp == one:
-        print("XXXXXXXXXXXXXXXXXXXXXXXXX")
-
     for number in digits:
         if temp == number:
-            print(digits.index(number) +1)
             row_of_numbers.append(digits.index(number) +1)
 
-
-    
     i += 4
 
 print(row_of_numbers)
