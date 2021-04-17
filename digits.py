@@ -142,3 +142,9 @@ if checksum == 0:
 else:
     print("NO NO")
 
+########################## 3 ######   ??????
+add_on_text = ""
+if checksum != 0:
+    add_on_text = "ERR"
+if len(row_of_numbers) != 9:
+    add_on_text = "ILL"
