@@ -108,6 +108,9 @@ while i < 33:       # 27 characters + 9 spaces = 36 digits
     for number in digits:
         if temp == number:
             row_of_numbers.append(digits.index(number) +1)
+        # user story 3
+        else:
+            row_of_numbers.append("?")   #####??????????
 
     i += 4
 
