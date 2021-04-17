@@ -130,5 +130,8 @@ while position < 9:
 
 checksum = checksum % 11
 
-print(checksum)
+if checksum == 0:
+    print("YEAY")
+else:
+    print("NO NO")
 
