@@ -73,6 +73,10 @@ digits = [one, two, three, four, five, six, seven, eight, nine, zero]
 line = 0 # starting at first line and inspecting 3 at a time
 
 '''
+
+collect all account numbers in a set(!!) (not list because space memory etc) or save it to a txt file...
+
+
 starting at row 0  line=0
 next one is line+4 
 EOF? check if exist?
@@ -109,3 +113,22 @@ while i < 33:       # 27 characters + 9 spaces = 36 digits
 
 print(row_of_numbers)
 print("Test")
+
+
+
+
+
+#################################
+#         USER STORY 2          #
+#################################
+
+checksum = 0
+position = 1
+while position < 9:
+    checksum += position * row_of_numbers[9 - position]
+    position +=1
+
+checksum = checksum % 11
+
+print(checksum)
+
