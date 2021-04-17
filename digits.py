@@ -125,6 +125,10 @@ print("Test")
 #         USER STORY 2          #
 #################################
 
+
+
+# see that checksum only works when number of digits is actuall<9 and not 8 + ?
+
 checksum = 0
 position = 1
 while position < 9:
