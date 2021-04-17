@@ -1,3 +1,7 @@
+#################################
+#         USER STORY 1          #
+#################################
+
 line_1 = "     _   _       _   _   _   _   _   _  "
 line_2 = "  |  _|  _| |_| |_  |_    | |_| |_| | | "
 line_3 = "  | |_   _|   |  _| |_|   | |_|  _| |_| "
@@ -72,6 +76,20 @@ line = 0 # starting at first line and inspecting 3 at a time
 starting at row 0  line=0
 next one is line+4 
 EOF? check if exist?
+
+
+
+file =open('data.txt','r')
+pos =0
+while True:
+  data = file.read(1)
+  if not data:
+    break
+  pos=pos+1
+  file.seek(pos)
+  print(data, end='')
+
+file.close()
 '''
 
 row_of_numbers = []
