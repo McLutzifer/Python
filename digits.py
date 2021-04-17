@@ -66,6 +66,14 @@ zero = [
 
 digits = [one, two, three, four, five, six, seven, eight, nine, zero]
 
+line = 0 # starting at first line and inspecting 3 at a time
+
+'''
+starting at row 0  line=0
+next one is line+4 
+EOF? check if exist?
+'''
+
 row_of_numbers = []
 i = 0
 while i < 33:       # 27 characters + 9 spaces = 36 digits 
