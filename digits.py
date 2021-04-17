@@ -2,6 +2,8 @@ line_1 = "     _   _       _   _   _   _   _   _  "
 line_2 = "  |  _|  _| |_| |_  |_    | |_| |_| | | "
 line_3 = "  | |_   _|   |  _| |_|   | |_|  _| |_| "
 
+# not quickest solution or most efficient but in my opinion easiest way to rad it - understand it by others
+
 one = [
     "   ",
     "  |",
