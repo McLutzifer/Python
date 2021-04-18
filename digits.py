@@ -148,3 +148,37 @@ if checksum != 0:
     add_on_text = "ERR"
 if len(row_of_numbers) != 9:
     add_on_text = "ILL"
+
+
+'''
+def get_account_numbers_from_file(filename):
+    """Returns all account numbers found in <filename>, as a list of tuples"""
+
+    account_numbers = []
+
+    linecount = 0
+    numberlines = ''
+    with open(filename, 'r') as f:
+        for line in f:
+            linecount += 1
+
+            if (linecount % 4) == 0:
+                account_numbers.append(parse_account_number(numberlines))
+                numberlines = ''
+            else:
+                # make sure to trim trailing newline
+                numberlines += line.rstrip('\n')
+
+    return account_numbers
+'''
+
+
+# one underscore missing: 
+# 1=7
+# 0=8
+# one pipe missing
+# 3=9
+# 5=9
+# 5=6
+# 6=8
+# 9=8
