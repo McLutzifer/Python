@@ -128,7 +128,7 @@ def read_file(filename):
     ##########
     with open(filename, 'r') as file:
     
-    # check iflines in file %4 == 0
+    # check if lines in file %4 == 0
         while i < 33:       # 27 characters + 9 spaces = 36 digits 
             temp = []
 
@@ -147,6 +147,9 @@ def read_file(filename):
 
     return row_of_numbers
 
+
+def read_lines():
+    return 0
 
 
 #################################
