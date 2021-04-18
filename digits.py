@@ -173,6 +173,12 @@ if checksum == 0:
 else:
     print("NO NO")
 
+
+#################################
+#         USER STORY 3          #
+#################################
+
+
 ########################## 3 ######   ??????
 add_on_text = ""
 if checksum != 0:
@@ -204,6 +210,17 @@ def get_account_numbers_from_file(filename):
 '''
 
 
+
+
+
+
+
+#################################
+#         USER STORY 4          #
+#################################
+
+# if account numbree containing ERR or ILL
+
 # one underscore missing: 
 # 1=7
 # 0=8
@@ -213,3 +230,16 @@ def get_account_numbers_from_file(filename):
 # 5=6
 # 6=8
 # 9=8
+
+
+
+
+
+
+
+
+
+#################################
+#         USER STORY 5          #
+#################################
+
