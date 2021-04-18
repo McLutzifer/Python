@@ -129,22 +129,21 @@ def read_file(filename):
     with open(filename, 'r') as file:
     
     # check iflines in file %4 == 0
+        while i < 33:       # 27 characters + 9 spaces = 36 digits 
+            temp = []
 
-    while i < 33:       # 27 characters + 9 spaces = 36 digits 
-        temp = []
+            temp.append(line_1[i:i+3])
+            temp.append(line_2[i:i+3])
+            temp.append(line_3[i:i+3])
 
-        temp.append(line_1[i:i+3])
-        temp.append(line_2[i:i+3])
-        temp.append(line_3[i:i+3])
+            for number in digits:
+                if temp == number:
+                    row_of_numbers.append(digits.index(number) +1)
+                # user story 3
+                else:
+                    row_of_numbers.append("?")   #####??????????
 
-        for number in digits:
-            if temp == number:
-                row_of_numbers.append(digits.index(number) +1)
-            # user story 3
-            else:
-                row_of_numbers.append("?")   #####??????????
-
-        i += 4
+            i += 4
 
     return row_of_numbers
 
