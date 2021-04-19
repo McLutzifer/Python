@@ -1,4 +1,4 @@
-import reader, checksum, writer
+import reader, checksum, writer, missing
 
 
 #################################
@@ -48,7 +48,11 @@ for account in account_numbers:
 #         USER STORY 4          #
 #################################
 
-# if account numbree containing ERR or ILL
+# if account numbree containing ERR or ILLs
+
+for account in account_numbers:
+    if " ILL" in account:
+        missing.missing_piece(account)
 
 # one underscore missing: 
 # 1=7
