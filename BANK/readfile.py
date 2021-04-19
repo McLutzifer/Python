@@ -31,15 +31,24 @@ def read_file(filename):
 def read_lines():
     return 0
 '''
-line = 0
+#line = 0
 
-num_dic = []
+filename = "BANK/testfile.txt"
 
-with open("BANK/testfile.txt", 'r') as file:
-    lines = file.readlines()
+def read_file(filename):
 
-    count = 0
-    for line in lines:
-        count += 1
-        print("Line{}: {}".format(count, line))
-        num_dic[count] = str(line)
+    num_dic = {}
+
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+
+        count = 0
+        for line in lines:
+            count += 1
+            num_dic[count] = line
+        if count % 4 != 0:
+            print("ERROR")
+
+    print(len(num_dic))
+
+read_file(filename)
