@@ -65,7 +65,7 @@ def check_if_actual_number(x):
     single_digits = digits.digits
 
     if x in single_digits:
-        derived_number = (single_digits.index(x) +1)
+        derived_number = (single_digits.index(x))
         # user story 3
     else:
         derived_number = "?"   # if number is unreadable a "?" will be printed insteead
