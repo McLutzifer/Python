@@ -1,74 +1,20 @@
+import digits
+
+
+
 #################################
 #         USER STORY 1          #
 #################################
+
+
+
+
 
 line_1 = "     _   _       _   _   _   _   _   _  "
 line_2 = "  |  _|  _| |_| |_  |_    | |_| |_| | | "
 line_3 = "  | |_   _|   |  _| |_|   | |_|  _| |_| "
 
 # not quickest solution or most efficient but in my opinion easiest way to rad it - understand it by others
-
-one = [
-    "   ",
-    "  |",
-    "  |"
-]
-
-two = [
-    " _ ",
-    " _|",
-    "|_ "
-]
-
-three = [
-    " _ ",
-    " _|",
-    " _|"
-]
-
-four = [
-    "   ",
-    "|_|",
-    "  |"
-]
-
-five = [
-    " _ ",
-    "|_ ",
-    " _|"
-]
-
-six = [
-    " _ ",
-    "|_ ",
-    "|_|"
-]
-
-seven = [
-    " _ ",
-    "  |",
-    "  |"
-]
-
-eight = [
-    " _ ",
-    "|_|",
-    "|_|"
-]
-
-nine = [
-    " _ ",
-    "|_|",
-    " _|"
-]
-
-zero = [
-    " _ ",
-    "| |",
-    "|_|"
-]
-
-digits = [one, two, three, four, five, six, seven, eight, nine, zero]
 
 
 
