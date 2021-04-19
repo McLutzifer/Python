@@ -7,7 +7,7 @@ import digits
 #################################
 
 
-
+print(digits.one)
 
 
 line_1 = "     _   _       _   _   _   _   _   _  "
@@ -105,7 +105,7 @@ def read_lines():
 
 
 # see that checksum only works when number of digits is actuall<9 and not 8 + ?
-
+'''
 checksum = 0
 position = 1
 while position < 9:
@@ -118,6 +118,7 @@ if checksum == 0:
     print("YEAY")
 else:
     print("NO NO")
+'''
 
 
 #################################
@@ -126,11 +127,11 @@ else:
 
 
 ########################## 3 ######   ??????
-add_on_text = ""
-if checksum != 0:
-    add_on_text = "ERR"
-if len(row_of_numbers) != 9:
-    add_on_text = "ILL"
+#add_on_text = ""
+#if checksum != 0:
+#    add_on_text = "ERR"
+#if len(row_of_numbers) != 9:
+#    add_on_text = "ILL"
 
 
 '''
