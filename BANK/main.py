@@ -1,4 +1,4 @@
-import reader
+import reader, checksum
 
 
 #################################
@@ -9,8 +9,8 @@ import reader
 my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
 
 read_digits = reader.read_file(my_test_file)
-x = reader.parse_dictionary(read_digits)
-print(x)
+account_numbers = reader.parse_dictionary(read_digits)
+print(account_numbers)
 
 
 
@@ -19,6 +19,13 @@ print(x)
 #################################
 
 
+for account in account_numbers:
+    if "?" in account:
+        account.append(" ILL")
+    elif len(account) != 9:
+        print("Sorry, this number is invalid")
+    else:
+        account = checksum(account)
 
 
 
