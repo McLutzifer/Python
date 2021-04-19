@@ -1,11 +1,13 @@
-def write(account):
+def write_file(account):
 
 #    print(account)
     
-    f = open("account_numbers.txt", "a")
+    f = open("account_numbers.txt", "w")
 
     for digit in account:
-        f.write(digit)
-    f.write("\n")
+        digit = str(digit)
+        #f.write(digit)
+        print(str(digit))
+    #f.write("\n")
     f.close()
     

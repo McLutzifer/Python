@@ -10,7 +10,7 @@ my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
 
 read_digits = reader.read_file(my_test_file)
 account_numbers = reader.parse_dictionary(read_digits)
-print(account_numbers)
+#print(account_numbers)
 
 
 
@@ -29,13 +29,14 @@ for account in account_numbers:
 
 
 
+print(account_numbers)
 #################################
 #         USER STORY 3          #
 #################################
 
 for account in account_numbers:
-    account = str(account)
-    writer.write(account)
+    #account = str(account)
+    writer.write_file(account)
 
 
 
