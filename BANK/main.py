@@ -1,4 +1,4 @@
-import reader, checksum
+import reader, checksum, writer
 
 
 #################################
@@ -26,6 +26,15 @@ for account in account_numbers:
         print("Sorry, this number is invalid")
     else:
         account = checksum(account)
+
+
+
+#################################
+#         USER STORY 3          #
+#################################
+
+for account in account_numbers:
+    writer.write(account)
 
 
 
