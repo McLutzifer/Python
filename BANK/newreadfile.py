@@ -31,9 +31,11 @@ def read_file(filename):
 ###########################################################################
 def parse_dictionary(dic):
 
+    all_accounts = []
     row_of_numbers = []
-    input_line= 0 # starting at first line and inspecting 3 at a time
-    i = 0
+    #input_line= 0 # starting at first line and inspecting 3 at a time
+    position = 0
+    #single_digits = digits.digits
     
     ###########  first one "line" by actually "4 lines"
     
@@ -45,39 +47,47 @@ def parse_dictionary(dic):
         line_2 = dic[index+2]
         line_3 = dic[index+3]
             
-
-        while i < 33:       # 27 characters + 9 spaces = 36 digits 
+        while position < 33:       # 27 characters + 9 spaces = 36 digits 
             temp = []
             
-
-            temp.append(line_1[i:i+3])
-            temp.append(line_2[i:i+3])
-            temp.append(line_3[i:i+3])
+            temp.append(line_1[position:position+3])
+            temp.append(line_2[position:position+3])
+            temp.append(line_3[position:position+3])
     
             print("+++++++++++++++++")
             print(temp)
             print("*****************")
             
-            i += 4
-            row_of_numbers.append(temp)
-        index += 4
+            check = check_if_actual_number(temp)
+            print(check)
 
-    single_digits = digits.digits
-    for number in single_digits:
-        if temp == number:
-            row_of_numbers.append(single_digits.index(number) +1)
-        # user story 3
-        else:
-            row_of_numbers.append("?")   #####??????????
+            position += 4
+            row_of_numbers.append(check)
+        index += 4
+        all_accounts.append(row_of_numbers)
 
 
     for row in row_of_numbers:
         print(row)
+
+
+
+    for c in all_accounts:
+        print(c)
+        
     return row_of_numbers
 
 
-    
+def check_if_actual_number(x):
+    single_digits = digits.digits
 
+    if x in single_digits:
+        derived_number = (single_digits.index(x) +1)
+        # user story 3
+    else:
+        derived_number = "?"
+
+    return derived_number
             
     
 
