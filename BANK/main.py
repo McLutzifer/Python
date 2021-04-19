@@ -1,5 +1,4 @@
-import digits
-import newreadfile as reader
+import reader
 
 
 #################################
