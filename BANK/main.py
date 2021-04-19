@@ -1,10 +1,30 @@
 import digits
-
+import newreadfile as reader
 
 
 #################################
 #         USER STORY 1          #
 #################################
+
+
+my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
+
+read_digits = reader.read_file(my_test_file)
+x = reader.parse_dictionary(read_digits)
+print(x)
+
+
+
+#################################
+#         USER STORY 2          #
+#################################
+
+
+
+
+
+
+'''
 
 
 print(digits.one)
@@ -18,7 +38,7 @@ line_3 = "  | |_   _|   |  _| |_|   | |_|  _| |_| "
 
 
 
-'''
+
 
 collect all account numbers in a set(!!) (not list because space memory etc) or save it to a txt file...
 
@@ -64,7 +84,7 @@ print(row_of_numbers)
 print("Test")
 '''
 
-
+'''
 def read_file(filename):
 
     row_of_numbers = []
@@ -103,7 +123,7 @@ def read_lines():
 #################################
 
 
-
+'''
 # see that checksum only works when number of digits is actuall<9 and not 8 + ?
 '''
 checksum = 0

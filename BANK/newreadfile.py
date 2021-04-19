@@ -32,56 +32,33 @@ def read_file(filename):
 def parse_dictionary(dic):
 
     all_accounts = []
-    
-    #input_line= 0 # starting at first line and inspecting 3 at a time
-
-    #single_digits = digits.digits
-    
-    print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-    print(len(dic))
-    print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-    
+        #input_line= 0 # starting at first line and inspecting 3 at a time
     ###########  first one "line" by actually "4 lines"
     
     index = 0
     while (index + 4) < len(dic):
         position = 0
         row_of_numbers = []
-        #print("")
-        
+
         line_1 = dic[index+1]
         line_2 = dic[index+2]
         line_3 = dic[index+3]
             
         while position < 33:       # 27 characters + 9 spaces = 36 digits 
-            temp = []
+            single = []
             
-            temp.append(line_1[position:position+3])
-            temp.append(line_2[position:position+3])
-            temp.append(line_3[position:position+3])
-    
-            #print("+++++++++++++++++")
-            #print(temp)
-            #print("*****************")
+            single.append(line_1[position:position+3])
+            single.append(line_2[position:position+3])
+            single.append(line_3[position:position+3])
             
-            check = check_if_actual_number(temp)
-            #print(check)
+            check = check_if_actual_number(single)
 
             position += 4
             row_of_numbers.append(check)
         index += 4
         all_accounts.append(row_of_numbers)
 
-
-    #for row in row_of_numbers:
-     #   print(row)
-
-
-
-    #for c in all_accounts:
-    #    print(c)
-        
-    return all_accounts
+    return all_accounts      # return a list of lists with all acountnumbers from file
 
 
 def check_if_actual_number(x):
@@ -91,15 +68,13 @@ def check_if_actual_number(x):
         derived_number = (single_digits.index(x) +1)
         # user story 3
     else:
-        derived_number = "?"
+        derived_number = "?"   # if number is unreadable a "?" will be printed insteead
 
     return derived_number
             
     
 
 ####################################################################
-def read_lines():
-    return 0
 
 
 
