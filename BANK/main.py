@@ -26,7 +26,9 @@ for account in account_numbers:
     elif len(account) != 9:
         print("Sorry, this number is invalid")
     else:
-        account = checksum.checksum(account)
+        checked = checksum.checksum(account)
+        if checked == False:
+            account.append(" ERR")
 
 
 #print(account_numbers)
@@ -53,6 +55,8 @@ for account in account_numbers:
 for account in account_numbers:
     if " ILL" in account:
         missing.missing_piece(account)
+    elif " ERR" in account:
+        missing.wrong_checksum(account)
 
 # one underscore missing: 
 # 1=7

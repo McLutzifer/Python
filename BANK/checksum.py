@@ -10,7 +10,11 @@ def checksum(accountnumber):
         checksum += position * accountnumber[9 - position]
         position +=1
     
-    if checksum % 11 != 0:
-        accountnumber.append(" ERR")
+    if checksum % 11 == 0:
+        return True
+    else:
+        return False
 
-    return accountnumber
+        #accountnumber.append(" ERR")
+
+    #return accountnumber

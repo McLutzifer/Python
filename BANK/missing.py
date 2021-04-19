@@ -1,4 +1,4 @@
-
+from checksum import *
 
 one_pipe_missing = {3: 9, 5: [6,9], 6: 8, 9:8}
 underscore_missing = {1:7, 0:8}
@@ -17,9 +17,9 @@ possible_alternatives = {
     }
 
 def missing_piece(account):
-    number_of_possibilities = 0
+    number_of_possibilities = {}
     
-    account.pop()
+    account.pop()   # remove ILL
     
     print("___________________________")    
     print(account)
@@ -28,8 +28,37 @@ def missing_piece(account):
     multiplier = account.index('?')
     print(9-multiplier)
 
+    pass
+
 
 def wrong_checksum(account):
-    pass
+    number_of_possibilities = {}
+
+    account.pop()     # remove ERR
+    print(possible_alternatives[0])
+
+    print(account)
+
+    for number in account:
+        for item in possible_alternatives[number]:
+            #if item != None:
+            print(account)
+            print(item)
+            saved = number
+            number = item
+            account.replace(number, item)
+            print(account)
+            if checksum(account) == True:
+                number_of_possibilities[saved] = item
+            else:
+                number = saved
+
+    print("OXOXOXOXOXOXOXOXOOXOXOXOXOXOXO")
+    print(number_of_possibilities)
+    print("OXOXOXOXOXOXOXOXOOXOXOXOXOXOXO")
     
-    
+
+    test = [account for ]
+
+
+    #my_list = ['new item' if i=='old item' else i for i in my_list]
