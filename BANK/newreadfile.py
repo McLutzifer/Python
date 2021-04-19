@@ -1,7 +1,7 @@
 import digits
 import sys
 #import exception.error
-filename = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
+my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
 
 ###################################################################
 def error_input():
@@ -36,6 +36,10 @@ def parse_dictionary(dic):
     #input_line= 0 # starting at first line and inspecting 3 at a time
     position = 0
     #single_digits = digits.digits
+    
+    print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+    print(len(dic))
+    print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
     
     ###########  first one "line" by actually "4 lines"
     
@@ -101,7 +105,7 @@ def read_lines():
 ##############################
 ###          TEST
 
-read_digits = read_file(filename)
-
+read_digits = read_file(my_test_file)
+#print(len(read_digits))
 parse_dictionary(read_digits)
 
