@@ -1,28 +1,37 @@
-'''
-def read_file(filename):
+def parse_dictionary(dic):
 
     row_of_numbers = []
-    line= 0 # starting at first line and inspecting 3 at a time
+    input_line= 0 # starting at first line and inspecting 3 at a time
     i = 0
-
-    ##########
-    with open(filename, 'r') as file:
     
-    # check if lines in file %4 == 0
+    ###########  first one "line" by actually "4 lines"
+    
+    index = 0
+    while (index + 4) < len(dic):
+        print("")
+        
+        index += 4
+
         while i < 33:       # 27 characters + 9 spaces = 36 digits 
             temp = []
-
+            
+            line_1 = dic[index+1]
+            line_2 = dic[index+2]
+            line_3 = dic[index+3]
+            
             temp.append(line_1[i:i+3])
             temp.append(line_2[i:i+3])
             temp.append(line_3[i:i+3])
-
+    
+            
+    
             for number in digits:
                 if temp == number:
                     row_of_numbers.append(digits.index(number) +1)
                 # user story 3
                 else:
                     row_of_numbers.append("?")   #####??????????
-
+    
             i += 4
 
     return row_of_numbers
@@ -30,26 +39,3 @@ def read_file(filename):
 
 def read_lines():
     return 0
-'''
-#line = 0
-
-filename = "BANK/testfile.txt"
-
-#def read_file(filename):
-
-num_dic = {}
-
-with open("/home/lukas/Documents/Programming/Python/BANK/testfile.txt", 'r') as file:
-    lines = file.readlines()
-
-    count = 0
-    for line in lines:
-        count += 1
-        num_dic[count] = line
-
-    if len(num_dic) %4 != 0:
-        print("ERROR")
-
-print(len(num_dic))
-
-#read_file(filename)
