@@ -25,7 +25,7 @@ for account in account_numbers:
     elif len(account) != 9:
         print("Sorry, this number is invalid")
     else:
-        account = checksum(account)
+        account = checksum.checksum(account)
 
 
 
@@ -34,6 +34,7 @@ for account in account_numbers:
 #################################
 
 for account in account_numbers:
+    account = str(account)
     writer.write(account)
 
 
