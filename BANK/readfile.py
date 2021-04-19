@@ -35,20 +35,21 @@ def read_lines():
 
 filename = "BANK/testfile.txt"
 
-def read_file(filename):
+#def read_file(filename):
 
-    num_dic = {}
+num_dic = {}
 
-    with open(filename, 'r') as file:
-        lines = file.readlines()
+with open("/home/lukas/Documents/Programming/Python/BANK/testfile.txt", 'r') as file:
+    lines = file.readlines()
 
-        count = 0
-        for line in lines:
-            count += 1
-            num_dic[count] = line
-        if count % 4 != 0:
-            print("ERROR")
+    count = 0
+    for line in lines:
+        count += 1
+        num_dic[count] = line
 
-    print(len(num_dic))
+    if len(num_dic) %4 != 0:
+        print("ERROR")
 
-read_file(filename)
+print(len(num_dic))
+
+#read_file(filename)

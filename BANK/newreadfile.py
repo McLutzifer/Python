@@ -2,6 +2,7 @@
 
 fulename = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
 
+'''
 def read_file(filename):
     num_dic = {}
     with open(filename, 'r') as file:
@@ -19,3 +20,4 @@ def read_file(filename):
     return num_dic
 
 x = read_file(fulename)
+'''
