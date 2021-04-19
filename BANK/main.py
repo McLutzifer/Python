@@ -10,7 +10,8 @@ my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
 
 read_digits = reader.read_file(my_test_file)
 account_numbers = reader.parse_dictionary(read_digits)
-#print(account_numbers)
+print(account_numbers)
+print("------------------------------------------------")
 
 
 
@@ -28,8 +29,9 @@ for account in account_numbers:
         account = checksum.checksum(account)
 
 
+#print(account_numbers)
 
-print(account_numbers)
+
 #################################
 #         USER STORY 3          #
 #################################
@@ -37,6 +39,26 @@ print(account_numbers)
 for account in account_numbers:
     #account = str(account)
     writer.write_file(account)
+
+
+for account in account_numbers:
+    print(account)
+
+#################################
+#         USER STORY 4          #
+#################################
+
+# if account numbree containing ERR or ILL
+
+# one underscore missing: 
+# 1=7
+# 0=8
+# one pipe missing
+# 3=9
+# 5=9
+# 5=6
+# 6=8
+# 9=8
 
 
 
@@ -197,23 +219,6 @@ def get_account_numbers_from_file(filename):
 
 
 
-
-
-#################################
-#         USER STORY 4          #
-#################################
-
-# if account numbree containing ERR or ILL
-
-# one underscore missing: 
-# 1=7
-# 0=8
-# one pipe missing
-# 3=9
-# 5=9
-# 5=6
-# 6=8
-# 9=8
 
 
 

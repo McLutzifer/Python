@@ -6,7 +6,7 @@ def checksum(accountnumber):
     #first of all check if account number is valid
     #meaning only 9 digits long and no "?"
 
-    while position < 9:
+    while position < 10:
         checksum += position * accountnumber[9 - position]
         position +=1
     
