@@ -32,9 +32,9 @@ def read_file(filename):
 def parse_dictionary(dic):
 
     all_accounts = []
-    row_of_numbers = []
+    
     #input_line= 0 # starting at first line and inspecting 3 at a time
-    position = 0
+
     #single_digits = digits.digits
     
     print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
@@ -45,7 +45,9 @@ def parse_dictionary(dic):
     
     index = 0
     while (index + 4) < len(dic):
-        print("")
+        position = 0
+        row_of_numbers = []
+        #print("")
         
         line_1 = dic[index+1]
         line_2 = dic[index+2]
@@ -58,12 +60,12 @@ def parse_dictionary(dic):
             temp.append(line_2[position:position+3])
             temp.append(line_3[position:position+3])
     
-            print("+++++++++++++++++")
-            print(temp)
-            print("*****************")
+            #print("+++++++++++++++++")
+            #print(temp)
+            #print("*****************")
             
             check = check_if_actual_number(temp)
-            print(check)
+            #print(check)
 
             position += 4
             row_of_numbers.append(check)
@@ -71,15 +73,15 @@ def parse_dictionary(dic):
         all_accounts.append(row_of_numbers)
 
 
-    for row in row_of_numbers:
-        print(row)
+    #for row in row_of_numbers:
+     #   print(row)
 
 
 
-    for c in all_accounts:
-        print(c)
+    #for c in all_accounts:
+    #    print(c)
         
-    return row_of_numbers
+    return all_accounts
 
 
 def check_if_actual_number(x):
@@ -105,7 +107,4 @@ def read_lines():
 ##############################
 ###          TEST
 
-read_digits = read_file(my_test_file)
-#print(len(read_digits))
-parse_dictionary(read_digits)
 
