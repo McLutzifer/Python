@@ -101,7 +101,7 @@ digits_hex = [zero, one, two, three, four, five, six, seven, eight, nine, a, b, 
 
 translation = []
 translation_dict = {}
-for h in range(16):
+for h in range(16):     # 'translating' underscores and pipes in integer values for easier comparison 
     number = []
     for i in range(3):
         for j in range(3):

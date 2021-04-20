@@ -1,4 +1,5 @@
 from digits import *
+import sys, missing
 
 
 def error_input():
@@ -43,10 +44,7 @@ def parse_dictionary(dic):
             single.append(line_2[position:position+3])
             single.append(line_3[position:position+3])
             
-            #check = check_if_actual_number(single)############
-            ############################
             if single in digits_hex:
-                #print("BIS HIRE HER GEHTS MAL")
                 check = digits_hex.index(single)
                 position += 4
                 row_of_numbers.append(check)
@@ -54,16 +52,12 @@ def parse_dictionary(dic):
                 check = "?"
                 position += 4
                 row_of_numbers.append(check)
-                missing_piece(single, row_of_numbers)  ##MISSING PIECE
-                ###################################################
-                ################################################
+                missing.missing_piece(single, row_of_numbers) 
 
-            #position += 4
-            #row_of_numbers.append(check)
         index += 4
         all_accounts.append(row_of_numbers)
 
-    return all_accounts      # return a list of lists with all acountnumbers from file
+    return all_accounts      # return a list of lists with all accountnumbers from file
 
 
 def check_if_actual_number(x):
@@ -71,9 +65,7 @@ def check_if_actual_number(x):
 
     if x in single_digits:
         derived_number = (single_digits.index(x))
-        # user story 3
     else:
-        derived_number = "?"   # if number is unreadable a "?" will be printed insteead
-        #derived_number = missing.missing_piece(x)
+        derived_number = "?"   # if number is unreadable a "?" will be printed instead
 
     return derived_number
