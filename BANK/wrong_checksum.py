@@ -16,6 +16,22 @@ possible_alternatives = {
     9: [5, 8]
     }
 
+def possible_outcomes(account, list_of_possibilities):
+
+    if len(list_of_possibilities) == 1:
+        print("################# nothing here")    
+        return list_of_possibilities[0]
+
+    elif len(list_of_possibilities) == 0:
+        account.append(" ILL")
+        print("#############THATS ILL")
+        print(account)
+        return account
+    else:
+        account.append(" AMB =>")
+        account.append(list_of_possibilities)
+        print("####----++++++----------finally")
+        return account
 
 
 def wrong_checksum(account):
@@ -51,20 +67,9 @@ def wrong_checksum(account):
 
     print(list_of_possibilities)
 
-    if len(list_of_possibilities) == 1:
-        print("################# nothing here")    
-        return list_of_possibilities[0]
+    possible_outcomes(account, list_of_possibilities)
 
-    elif len(list_of_possibilities) == 0:
-        account.append(" ILL")
-        print("#############THATS ILL")
-        print(account)
-        return account
-    else:
-        account.append(" AMB =>")
-        account.append(list_of_possibilities)
-        print("####----++++++----------finally")
-        return account
+
 
     
 wrong_checksum( [7,1,8,9,9,8,1,0,9, "ERR"])
