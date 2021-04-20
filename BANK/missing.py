@@ -18,7 +18,7 @@ possible_alternatives = {
 
 def missing_piece(account):
     number_of_possibilities = {}
-    
+    '''
     account.pop()   # remove ILL
     
     print("___________________________")    
@@ -27,18 +27,37 @@ def missing_piece(account):
 
     multiplier = account.index('?')
     print(9-multiplier)
-
+'''
     pass
 
 
 def wrong_checksum(account):
-    number_of_possibilities = {}
+    possibilities = {}
 
     account.pop()     # remove ERR
     print(possible_alternatives[0])
 
     print(account)
 
+    possible_account = account
+
+    for i in range(len(possible_account)):
+        for entry in possible_alternatives[possible_account[i]]:
+            print("............................")
+            print(entry)
+            print(".............................")
+            actual_number = possible_account[i]
+            possible_account[i] = entry
+            print(possible_account)
+
+            if checksum(possibleaccount) == True:
+                print("tha's right: " + str(account)) 
+                possibilities[possible_account] = []
+
+            account[i] = actual_number
+
+    print(possibilities)
+'''
     for number in account:
         for item in possible_alternatives[number]:
             #if item != None:
@@ -56,7 +75,7 @@ def wrong_checksum(account):
     print(number_of_possibilities)
     print("OXOXOXOXOXOXOXOXOOXOXOXOXOXOXO")
     
-
+'''
     #test = [account for ]
 
 
