@@ -58,6 +58,17 @@ def wrong_checksum(account):
             account[i] = actual_number
 
     print(list_of_possibilities)
+
+    if len(list_of_possibilities) == 1:
+        return list_of_possibilities[0]
+    elif len(list_of_possibilities) == 0:
+        account.append(" ILL")
+        return account
+    else:
+        account.append(" AMB =>")
+        account.append(list_of_possibilities)
+        return account
+
 '''
     for number in account:
         for item in possible_alternatives[number]:
