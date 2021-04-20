@@ -44,8 +44,7 @@ def wrong_checksum(account):
             #if item != None:
             print(account)
             print(item)
-            saved = number
-            number = item
+            saved, number = number, item
             account.replace(number, item)
             print(account)
             if checksum(account) == True:
@@ -58,7 +57,7 @@ def wrong_checksum(account):
     print("OXOXOXOXOXOXOXOXOOXOXOXOXOXOXO")
     
 
-    test = [account for ]
+    #test = [account for ]
 
 
     #my_list = ['new item' if i=='old item' else i for i in my_list]
