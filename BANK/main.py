@@ -59,6 +59,7 @@ for account in account_numbers:
         account = missing.wrong_checksum(account)
         writer.write_file(account, "account_numbers_controlled")
 
+
 # one underscore missing: 
 # 1=7
 # 0=8
