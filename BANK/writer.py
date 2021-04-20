@@ -1,8 +1,8 @@
-def write_file(account):
+def write_file(account, filename):
 
 #    print(account)
     
-    f = open("account_numbers.txt", "a")
+    f = open(filename, "a")
 
     for digit in account:
         digit = str(digit)

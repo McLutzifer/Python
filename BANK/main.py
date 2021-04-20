@@ -40,7 +40,7 @@ for account in account_numbers:
 
 for account in account_numbers:
     #account = str(account)
-    writer.write_file(account)
+    writer.write_file(account, "account_numbers_as_read.txt")
 
 
 for account in account_numbers:
