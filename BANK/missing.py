@@ -50,7 +50,7 @@ def wrong_checksum(account):
             possible_account[i] = entry
             print(possible_account)
 
-            if checksum(possibleaccount) == True:
+            if checksum(possible_account) == True:
                 print("tha's right: " + str(account)) 
                 possibilities[possible_account] = []
 
