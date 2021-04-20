@@ -10,43 +10,52 @@ test = [
 
 def guessing_the_number(integer):
 
-    origin = integer.copy()
+    #rigin = integer.copy()
     testcase = integer[0] + integer[1] + integer[2]
-    #print(testcase)
-    # "  | |  |"
-
+    print(testcase)
+    print(type(testcase))
     for x in testcase:
+        print(x)
+    # "  | |  |"
+    possible_numbers = []
+
+    for i in range(len(testcase)):
+        x = testcase[i]
         if x == " ":
             x = "|"
-            if x in digits.digits:
-                possible_numbers.append(digits.digits.index(x))
+            if testcase in digits.digits_str:
+                print("1")
+                possible_numbers.append(digits.digits_str.index(x))
             x = "_"
-            if x in digits.digits:
-                possible_numbers.append(digits.digits.index(x))
+            if testcase in digits.digits_str:
+                print("2")
+                possible_numbers.append(digits.digits_str.index(x))
             x = " "
-        if x == "_":
+        elif x == "_":
             x = "|"
-            if x in digits.digits:
-                possible_numbers.append(digits.digits.index(x))
+            if testcase in digits.digits_str:
+                possible_numbers.append(digits.digits_str.index(x))
             x = " "
-            if x in digits.digits:
-                possible_numbers.append(digits.digits.index(x))
+            if testcase in digits.digits_str:
+                possible_numbers.append(digits.digits_str.index(x))
             x = "_"
-        if x == "|":
+        elif x == "|":
             x = " "
-            if x in digits.digits:
-                possible_numbers.append(digits.digits.index(x))
+            if testcase in digits.digits_str:
+                possible_numbers.append(digits.digits_str.index(x))
             x = "_"
-            if x in digits.digits:
-                possible_numbers.append(digits.digits.index(x))
+            if testcase in digits.digits_str:
+                possible_numbers.append(digits.digits_str.index(x))
             x = "|"
 
 
+    print(possible_numbers)
 
 
+guessing_the_number(test)
 
 
-
+'''
 
     print(integer[0][1])
 
@@ -84,11 +93,12 @@ def guessing_the_number(integer):
 
     return integer
 
-guessing_the_number(test)
+'''
 
 
 
 
+'''
 from checksum import *
 
 one_pipe_missing = {3: 9, 5: [6,9], 6: 8, 9:8}
@@ -109,7 +119,7 @@ possible_alternatives = {
 
 def missing_piece(account):
     number_of_possibilities = {}
-    '''
+
     account.pop()   # remove ILL
     
     print("___________________________")    
@@ -118,7 +128,7 @@ def missing_piece(account):
 
     multiplier = account.index('?')
     print(9-multiplier)
-'''
+
     pass
 
 
@@ -175,7 +185,7 @@ def wrong_checksum(account):
     
 wrong_checksum( [7,1,8,9,9,8,1,0,9, "ERR"])
 
-'''
+
     for number in account:
         for item in possible_alternatives[number]:
             #if item != None:
