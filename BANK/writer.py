@@ -9,4 +9,5 @@ def write_file(account, filename):
         f.write(digit)
     f.write("\n")
     f.close()
+
     

@@ -1,15 +1,10 @@
-import digits
-import sys
-import missing
-#import exception.error
-my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
+from digits import *
 
-###################################################################
+
 def error_input():
     print("an ERROR occured - unexpected number on lines")
     sys.exit()
 
-#######################################################################
 def read_file(filename):
     read_lines = {}
     try:
@@ -23,19 +18,15 @@ def read_file(filename):
     
             if len(read_lines) %4 != 0:
                 error_input()
-    except Exception as e:
-        #exception.error.logger.error(e)
-        pass
-    #print(len(read_lines))
+    except:
+        print("An Error occured - unable to read file")
+
     return read_lines
 
-###########################################################################
 def parse_dictionary(dic):
 
     all_accounts = []
-        #input_line= 0 # starting at first line and inspecting 3 at a time
-    ###########  first one "line" by actually "4 lines"
-    
+
     index = 0
     while (index + 4) < len(dic):
         position = 0
@@ -54,15 +45,16 @@ def parse_dictionary(dic):
             
             #check = check_if_actual_number(single)############
             ############################
-            if single in digits.digits:
-                check = digits.digits.index()
+            if single in digits_hex:
+                #print("BIS HIRE HER GEHTS MAL")
+                check = digits_hex.index(single)
                 position += 4
                 row_of_numbers.append(check)
             else:
                 check = "?"
-                check = missing.missing_piece(single)
                 position += 4
                 row_of_numbers.append(check)
+                missing_piece(single, row_of_numbers)  ##MISSING PIECE
                 ###################################################
                 ################################################
 
@@ -75,7 +67,7 @@ def parse_dictionary(dic):
 
 
 def check_if_actual_number(x):
-    single_digits = digits.digits
+    single_digits = digits_hex
 
     if x in single_digits:
         derived_number = (single_digits.index(x))
@@ -85,15 +77,3 @@ def check_if_actual_number(x):
         #derived_number = missing.missing_piece(x)
 
     return derived_number
-            
-    
-
-####################################################################
-
-
-
-
-##############################
-###          TEST
-
-

@@ -14,7 +14,3 @@ def checksum(accountnumber):
         return True
     else:
         return False
-
-        #accountnumber.append(" ERR")
-
-    #return accountnumber

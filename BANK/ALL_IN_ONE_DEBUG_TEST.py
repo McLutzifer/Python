@@ -128,7 +128,7 @@ translation_dict = {}
 for index, value in enumerate(translation):
     translation_dict[index] = value
 
-print(translation_dict)
+#print(translation_dict)
 
 
 
@@ -161,7 +161,36 @@ def missing_piece(integer, account):     ##### MISSING PIECE STUFF  add account
             if integer[i][j] == "/":
                 number_in_digits.append(4)
 
-    print(" --------------- " + str(number_in_digits))
+    #print(" --------------- " + str(number_in_digits))
+
+    for i in range(9):
+        x = number_in_digits[i]
+
+        for num in range(5):
+            if x == num:
+                for y in range(5):
+                    if y != num:
+                        x = y
+                        if number_in_digits in translation:
+                            possibilities.append(number_in_digits)
+                            print("WWWWUUUUHUHHHHUHUHUHUHUHUHUHUHUH")
+                    else:
+                        continue
+                x = num
+        '''
+                
+        if x == [ num for num in range(5)]:
+            if num != [y for y in range(5)]:
+                x = y
+                if number_in_digits in translation:
+                    possibilities.append(number_in_digits)
+                    print("WWWWUUUUHUHHHHUHUHUHUHUHUHUHUHUH")
+            else:
+                continue
+            x = num
+        '''
+
+    """
     for i in range(9):
         x = number_in_digits[i]
         print(x)
@@ -203,7 +232,7 @@ def missing_piece(integer, account):     ##### MISSING PIECE STUFF  add account
                 print("yeay")
                 possibilities.append(number_in_digits)
             number_in_digits[i] = 2
-
+    """
     unique = []
     [unique.append(x) for x in possibilities if x not in unique]
     account = possible_outcomes(integer, unique)
@@ -264,7 +293,7 @@ def parse_dictionary(dic):
             #check = check_if_actual_number(single)############
             ############################
             if single in digits_hex:
-                print("BIS HIRE HER GEHTS MAL")
+                #print("BIS HIRE HER GEHTS MAL")
                 check = digits_hex.index(single)
                 position += 4
                 row_of_numbers.append(check)
@@ -313,8 +342,8 @@ def write_file(account, filename):
         f.write(digit)
     f.write("\n")
     f.close()
-    for account in account_numbers:
-        print(account)
+    #for account in account_numbers:
+        #print(account)
 #          CHECKSUM     #
 ########################
 
@@ -348,18 +377,18 @@ possible_alternatives = { 0: [8], 1: [7], 2: [], 3: [9], 4: [], 5: [6, 9], 6: [5
 def possible_outcomes(account, list_of_possibilities):
 
     if len(list_of_possibilities) == 1:
-        print("################# nothing here")    
+        #print("################# nothing here")    
         return list_of_possibilities[0]
 
     elif len(list_of_possibilities) == 0:
         account.append(" ILL")
-        print("#############THATS ILL")
-        print(account)
+        #print("#############THATS ILL")
+        #print(account)
         return account
     else:
         account.append(" AMB =>")
         account.append(list_of_possibilities)
-        print("####----++++++----------finally")
+        #print("####----++++++----------finally")
         return account
 
 
@@ -380,21 +409,21 @@ def wrong_checksum(account):
             #print(entry)
             #print(".............................")
             actual_number = possible_account[i]
-            print("actual_number " + str(actual_number))
+            #print("actual_number " + str(actual_number))
             possible_account[i] = entry
-            print("possible account[i] " + str(possible_account[i]))
+            #print("possible account[i] " + str(possible_account[i]))
             #print(possible_account)
 
             if checksum(possible_account) == True:
-                print("tha's right: " + str(possible_account)) 
+                #print("tha's right: " + str(possible_account)) 
                 to_add=possible_account.copy()
                 list_of_possibilities.append(to_add)
-                print(list_of_possibilities)
+                #print(list_of_possibilities)
 
             possible_account[i] = actual_number
-            print("possible account[i] " + str(possible_account[i]))
+            #print("possible account[i] " + str(possible_account[i]))
 
-    print(list_of_possibilities)
+    #print(list_of_possibilities)
 
     account = possible_outcomes(account, list_of_possibilities)
     return account
@@ -417,8 +446,8 @@ def wrong_checksum(account):
 my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
 read_digits = read_file(my_test_file)
 account_numbers = parse_dictionary(read_digits)
-print(account_numbers)
-print("------------------------------------------------")
+#print(account_numbers)
+#print("------------------------------------------------")
 for account in account_numbers:
     if "?" in account:
         account.append(" ILL")

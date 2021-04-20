@@ -2,19 +2,11 @@ import digits
 import checksum
 import wrong_checksum
 
-test = [
-    "   ",
-    "| |",
-    "  |"
-]
-
-
-def missing_piece(integer):
+def missing_piece(integer, account):     ##### MISSING PIECE STUFF  add account
 
     possibilities = []
-
-    integer = ["   ","| |", "  |"]   #verwortackelter vierer
     number_in_digits = []
+
     for i in range(3):
         for j in range(3):
             if integer[i][j] == " ":
@@ -30,66 +22,24 @@ def missing_piece(integer):
             if integer[i][j] == "/":
                 number_in_digits.append(4)
 
-    print(" --------------- " + str(number_in_digits))
+    #print(" --------------- " + str(number_in_digits))
+
     for i in range(9):
         x = number_in_digits[i]
-        print(x)
-        if x == 0:
-            number_in_digits[i] = 1
-            print(number_in_digits)
-            if number_in_digits in digits.translation:
-                print("yeay")
-                possibilities.append(number_in_digits)
-            number_in_digits[i] = 2
-            print(number_in_digits)
-            if number_in_digits in digits.translation:
-                print("yeay")
-                possibilities.append(number_in_digits)
-            number_in_digits[i] = 0
 
-        if x == 1:
-            number_in_digits[i] = 0
-            print(number_in_digits)
-            if number_in_digits in digits.translation:
-                print("yeay")
-                possibilities.append(number_in_digits)
-            number_in_digits[i] = 2
-            print(number_in_digits)
-            if number_in_digits in digits.translation:
-                print("yeay")
-                possibilities.append(number_in_digits)
-            number_in_digits[i] = 1
-
-        if x == 2:
-            number_in_digits[i] = 0
-            print(number_in_digits)
-            if number_in_digits in digits.translation:
-                print("yeay")
-                possibilities.append(number_in_digits)
-            number_in_digits[i] = 1
-            print(number_in_digits)
-            if number_in_digits in digits.translation:
-                print("yeay")
-                possibilities.append(number_in_digits)
-            number_in_digits[i] = 2
+        for num in range(5):
+            if x == num:
+                for y in range(5):
+                    if y != num:
+                        x = y
+                        if number_in_digits in translation:
+                            possibilities.append(number_in_digits)
+                            print("WWWWUUUUHUHHHHUHUHUHUHUHUHUHUHUH")
+                    else:
+                        continue
+                x = num
 
     unique = []
     [unique.append(x) for x in possibilities if x not in unique]
     account = wrong_checksum.possible_outcomes(integer, unique)
     return account
-    '''
-    if len(unique) == 1:
-        return unique
-    elif len(unique) == 0:
-        integer.append(" ILL")
-        return integer
-    else:
-        possible_solutions = []
-        for entry in unique:
-            if checksum.checksum(entry) == True:
-                possible_solutions.append(entry)
-        if len()
-        # several solutions possible - need checksum again
-    '''
-
-    
