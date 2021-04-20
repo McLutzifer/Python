@@ -1,4 +1,4 @@
-import reader, checksum, writer, wrong_checksum
+import reader, checksum, writer, wrong_checksum, missing
 #
 
 
@@ -34,9 +34,7 @@ for account in account_numbers:
 
 #print(account_numbers)
 
-
-#################################
-#         USER STORY 3          #
+        possible_solutions = []
 #################################
 
 for account in account_numbers:
