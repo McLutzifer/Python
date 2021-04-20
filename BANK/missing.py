@@ -32,7 +32,8 @@ def missing_piece(account):
 
 
 def wrong_checksum(account):
-    possibilities = {}
+    list_of_possibilities = []
+    #possibilities = {account: list_of_possibilities}
 
     account.pop()     # remove ERR
     print(possible_alternatives[0])
@@ -52,11 +53,11 @@ def wrong_checksum(account):
 
             if checksum(possible_account) == True:
                 print("tha's right: " + str(account)) 
-                possibilities[possible_account] = [account]
+                list_of_possibilities.append(possible_account)
 
             account[i] = actual_number
 
-    print(possibilities)
+    print(list_of_possibilities)
 '''
     for number in account:
         for item in possible_alternatives[number]:
