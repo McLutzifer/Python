@@ -42,7 +42,7 @@ def wrong_checksum(account):
 
     #print(account)
 
-    possible_account = account
+    possible_account = account.copy()
 
     for i in range(len(possible_account)):
         for entry in possible_alternatives[possible_account[i]]:
@@ -50,14 +50,18 @@ def wrong_checksum(account):
             #print(entry)
             #print(".............................")
             actual_number = possible_account[i]
+            print("actual_number " + str(actual_number))
             possible_account[i] = entry
+            print("possible account[i] " + str(possible_account[i]))
             #print(possible_account)
 
             if checksum(possible_account) == True:
-                print("tha's right: " + str(account)) 
+                print("tha's right: " + str(possible_account)) 
                 list_of_possibilities.append(possible_account)
+                print(list_of_possibilities)
 
             possible_account[i] = actual_number
+            print("possible account[i] " + str(possible_account[i]))
 
     print(list_of_possibilities)
 
