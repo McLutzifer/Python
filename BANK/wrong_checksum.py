@@ -1,20 +1,6 @@
 from checksum import *
 
-one_pipe_missing = {3: 9, 5: [6,9], 6: 8, 9:8}
-underscore_missing = {1:7, 0:8}
-
-possible_alternatives = {
-    0: [8],
-    1: [7],
-    2: [],
-    3: [9],
-    4: [],
-    5: [6, 9],
-    6: [5, 8],
-    7: [1],
-    8: [0, 6, 9],
-    9: [5, 8]
-    }
+possible_alternatives = { 0: [8], 1: [7], 2: [], 3: [9], 4: [], 5: [6, 9], 6: [5, 8], 7: [1], 8: [0, 6, 9], 9: [5, 8] }
 
 def possible_outcomes(account, list_of_possibilities):
 

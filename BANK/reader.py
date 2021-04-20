@@ -1,5 +1,6 @@
 import digits
 import sys
+import missing
 #import exception.error
 my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
 
@@ -51,10 +52,22 @@ def parse_dictionary(dic):
             single.append(line_2[position:position+3])
             single.append(line_3[position:position+3])
             
-            check = check_if_actual_number(single)
+            #check = check_if_actual_number(single)############
+            ############################
+            if single in digits.digits:
+                check = digits.digits.index()
+                position += 4
+                row_of_numbers.append(check)
+            else:
+                check = "?"
+                check = missing.missing_piece(single)
+                position += 4
+                row_of_numbers.append(check)
+                ###################################################
+                ################################################
 
-            position += 4
-            row_of_numbers.append(check)
+            #position += 4
+            #row_of_numbers.append(check)
         index += 4
         all_accounts.append(row_of_numbers)
 
@@ -69,6 +82,7 @@ def check_if_actual_number(x):
         # user story 3
     else:
         derived_number = "?"   # if number is unreadable a "?" will be printed insteead
+        #derived_number = missing.missing_piece(x)
 
     return derived_number
             

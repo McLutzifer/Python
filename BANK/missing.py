@@ -23,6 +23,12 @@ def missing_piece(integer):
                 number_in_digits.append(1)
             if integer[i][j] == "_":
                 number_in_digits.append(2)
+            ###############################
+            ############ HEX ##############
+            if integer[i][j] == "\\":
+                number_in_digits.append(3)
+            if integer[i][j] == "/":
+                number_in_digits.append(4)
 
     print(" --------------- " + str(number_in_digits))
     for i in range(9):

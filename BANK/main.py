@@ -1,5 +1,4 @@
 import reader, checksum, writer, wrong_checksum, missing
-#
 
 
 #################################
@@ -27,9 +26,10 @@ for account in account_numbers:
     elif len(account) != 9:
         print("Sorry, this number is invalid")
     else:
-        checked = checksum.checksum(account)
-        if checked == False:
-            account.append(" ERR")
+        if " AMB" or " ILL"  not in account:
+            checked = checksum.checksum(account)
+            if checked == False:
+                account.append(" ERR")
 
 
 #print(account_numbers)
