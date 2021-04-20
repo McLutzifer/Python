@@ -57,7 +57,7 @@ for account in account_numbers:
         account = missing.missing_piece(account)
     elif " ERR" in account:
         account = missing.wrong_checksum(account)
-        writer.write_file(account, "account_numbers_proofread")
+        writer.write_file(account, "account_numbers_controlled")
 
 # one underscore missing: 
 # 1=7
