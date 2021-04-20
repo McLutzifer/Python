@@ -52,7 +52,7 @@ def wrong_checksum(account):
 
             if checksum(possible_account) == True:
                 print("tha's right: " + str(account)) 
-                possibilities[possible_account] = []
+                possibilities[possible_account] = [account]
 
             account[i] = actual_number
 
