@@ -54,9 +54,10 @@ for account in account_numbers:
 
 for account in account_numbers:
     if " ILL" in account:
-        missing.missing_piece(account)
+        account = missing.missing_piece(account)
     elif " ERR" in account:
-        missing.wrong_checksum(account)
+        account = missing.wrong_checksum(account)
+        writer.write_file(account, "account_numbers_proofread")
 
 # one underscore missing: 
 # 1=7
@@ -65,7 +66,7 @@ for account in account_numbers:
 # 3=9
 # 5=9
 # 5=6
-# 6=8
+# 6=8s
 # 9=8
 
 

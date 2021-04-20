@@ -55,7 +55,7 @@ def wrong_checksum(account):
                 print("tha's right: " + str(account)) 
                 list_of_possibilities.append(possible_account)
 
-            account[i] = actual_number
+            possible_account[i] = actual_number
 
     print(list_of_possibilities)
 
@@ -68,6 +68,8 @@ def wrong_checksum(account):
         account.append(" AMB =>")
         account.append(list_of_possibilities)
         return account
+
+    
 
 '''
     for number in account:
