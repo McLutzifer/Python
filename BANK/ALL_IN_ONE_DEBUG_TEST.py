@@ -128,18 +128,14 @@ hex = [zero, one, two, three, four, five, six, seven, eight, nine, a, b, c, d, e
 
 
 
-test = [
-    "   ",
-    "| |",
-    "  |"
-]
+#test = [    "   ",    "| |",     "  |" ]
 
 
 def missing_piece(integer, account):     ##### MISSING PIECE STUFF  add account
 
     possibilities = []
 
-    integer = ["   ","| |", "  |"]   #verwortackelter vierer
+    #integer = ["   ","| |", "  |"]   #verwortackelter vierer
     number_in_digits = []
     for i in range(3):
         for j in range(3):
@@ -456,9 +452,8 @@ for account in account_numbers:
     print(account)
 
 for account in account_numbers:
-    if " ILL" in account:
-        account = missing_piece(account)
-        write_file(account, "account_numbers_controlled.txt")
-    elif " ERR" in account:
+    if " ERR" in account:
         account = wrong_checksum(account)
+        write_file(account, "account_numbers_controlled.txt")
+    else:
         write_file(account, "account_numbers_controlled.txt")
