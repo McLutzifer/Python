@@ -78,7 +78,7 @@ for h in range(9):
 
 
 
-
+'''
 one_str   = "     |  |"
 two_str   = " _  _||_ "
 three_str = " _  _| _|"
@@ -93,3 +93,42 @@ zero_str  = " _ | ||_|"
 digits_str = [ one_str, two_str, three_str, 
 four_str, five_str, six_str, seven_str, 
 eight_str, nine_str, zero_str ]
+'''
+
+a = [
+    " _ ",
+    "|_|",
+    "| |"
+]
+
+b = [
+    " _ ",
+    "|_\\",
+    "|_/"
+]
+
+c = [
+    " _ ",
+    "|  ",
+    "|_ "
+]
+
+d = [
+    " _ ",
+    "| \\",
+    "|_/"
+]
+
+e = [
+    " _ ",
+    "|_ ",
+    "|_ "
+]
+
+f = [
+    " _ ",
+    "|_ ",
+    "|  "
+]
+
+hex = [zero, one, two, three, four, five, six, seven, eight, nine, a, b, c, d, e, f]

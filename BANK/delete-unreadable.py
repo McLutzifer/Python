@@ -1,3 +1,4 @@
+"""
 import digits
 
 
@@ -208,3 +209,5 @@ wrong_checksum( [7,1,8,9,9,8,1,0,9, "ERR"])
 
 
     #my_list = ['new item' if i=='old item' else i for i in my_list]
+
+    """
