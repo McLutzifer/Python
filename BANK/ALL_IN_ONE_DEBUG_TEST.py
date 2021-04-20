@@ -65,24 +65,6 @@ zero = [
     "|_|"
 ]
 
-digits = [zero, one, two, three, four, five, six, seven, eight, nine]
-
-
-
-translation = []
-for h in range(9):
-    number = []
-    for i in range(3):
-        for j in range(3):
-            if digits[h][i][j] == " ":
-                number.append(0)
-            if digits[h][i][j] == "|":
-                number.append(1)
-            if digits[h][i][j] == "_":
-                number.append(2)
-    translation.append(number)
-
-
 a = [
     " _ ",
     "|_|",
@@ -119,7 +101,35 @@ f = [
     "|  "
 ]
 
-hex = [zero, one, two, three, four, five, six, seven, eight, nine, a, b, c, d, e, f]
+
+digits = [zero, one, two, three, four, five, six, seven, eight, nine]
+digits_hex = [zero, one, two, three, four, five, six, seven, eight, nine, a, b, c, d, e, f]
+
+
+translation = []
+translation_dict = {}
+for h in range(16):
+    number = []
+    for i in range(3):
+        for j in range(3):
+            if digits_hex[h][i][j] == " ":
+                number.append(0)
+            if digits_hex[h][i][j] == "|":
+                number.append(1)
+            if digits_hex[h][i][j] == "_":
+                number.append(2)
+            if digits_hex[h][i][j] == "\\":
+                number.append(3)
+            if digits_hex[h][i][j] == "/":
+                number.append(4)
+    translation.append(number)
+
+translation_dict = {}
+for index, value in enumerate(translation):
+    translation_dict[index] = value
+
+print(translation_dict)
+
 
 
 ##################################
@@ -134,9 +144,8 @@ hex = [zero, one, two, three, four, five, six, seven, eight, nine, a, b, c, d, e
 def missing_piece(integer, account):     ##### MISSING PIECE STUFF  add account
 
     possibilities = []
-
-    #integer = ["   ","| |", "  |"]   #verwortackelter vierer
     number_in_digits = []
+
     for i in range(3):
         for j in range(3):
             if integer[i][j] == " ":
@@ -207,7 +216,7 @@ def missing_piece(integer, account):     ##### MISSING PIECE STUFF  add account
 #################################
 
 
-my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
+#my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
 
 
 def error_input():
@@ -227,10 +236,9 @@ def read_file(filename):
     
             if len(read_lines) %4 != 0:
                 error_input()
-    except Exception as e:
-        #exception.error.logger.error(e)
-        pass
-    #print(len(read_lines))
+    except:
+        print("An Error occured - unable to read file")
+
     return read_lines
 
 def parse_dictionary(dic):
@@ -255,9 +263,9 @@ def parse_dictionary(dic):
             
             #check = check_if_actual_number(single)############
             ############################
-            if single in digits:
+            if single in digits_hex:
                 print("BIS HIRE HER GEHTS MAL")
-                check = digits.index(single)
+                check = digits_hex.index(single)
                 position += 4
                 row_of_numbers.append(check)
             else:
@@ -277,7 +285,7 @@ def parse_dictionary(dic):
 
 
 def check_if_actual_number(x):
-    single_digits = digits
+    single_digits = digits_hex
 
     if x in single_digits:
         derived_number = (single_digits.index(x))
@@ -305,8 +313,8 @@ def write_file(account, filename):
         f.write(digit)
     f.write("\n")
     f.close()
-    
-###########################
+    for account in account_numbers:
+        print(account)
 #          CHECKSUM     #
 ########################
 
@@ -396,28 +404,7 @@ def wrong_checksum(account):
 #wrong_checksum( [7,1,8,9,9,8,1,0,9, "ERR"])
 
 
-            
-
-########################
-#       WRITER        #
-######################
-
-def write_file(account, filename):
-
-#    print(account)
-    
-    f = open(filename, "a")
-
-    for digit in account:
-        digit = str(digit)
-        f.write(digit)
-    f.write("\n")
-    f.close()
-    
-
-
-
-
+   
 
 
 
@@ -448,10 +435,8 @@ for account in account_numbers:
     #account = str(account)
     write_file(account, "account_numbers_as_read.txt")
 
-for account in account_numbers:
-    print(account)
 
-for account in account_numbers:
+#for account in account_numbers:
     if " ERR" in account:
         account = wrong_checksum(account)
         write_file(account, "account_numbers_controlled.txt")
