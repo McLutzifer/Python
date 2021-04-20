@@ -69,7 +69,8 @@ def missing_piece(integer):
 
     unique = []
     [unique.append(x) for x in possibilities if x not in unique]
-    wrong_checksum.possible_outcomes(integer, unique)
+    account = wrong_checksum.possible_outcomes(integer, unique)
+    return account
     '''
     if len(unique) == 1:
         return unique

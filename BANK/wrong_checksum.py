@@ -67,8 +67,8 @@ def wrong_checksum(account):
 
     print(list_of_possibilities)
 
-    possible_outcomes(account, list_of_possibilities)
-
+    account = possible_outcomes(account, list_of_possibilities)
+    return account
 
 
     
