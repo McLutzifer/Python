@@ -62,7 +62,19 @@ digits = [zero, one, two, three, four, five, six, seven, eight, nine]
 
 
 
-
+translation = []
+for h in range(9):
+    number = []
+    for i in range(3):
+        for j in range(3):
+            if digits[h][i][j] == " ":
+                number.append(0)
+            if digits[h][i][j] == "|":
+                number.append(1)
+            if digits[h][i][j] == "_":
+                number.append(2)
+    translation.append(number)
+#print(translation)
 
 
 

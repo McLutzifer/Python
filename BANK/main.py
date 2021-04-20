@@ -1,4 +1,5 @@
-import reader, checksum, writer, missing
+import reader, checksum, writer, wrong_checksum
+#
 
 
 #################################
@@ -56,7 +57,7 @@ for account in account_numbers:
     if " ILL" in account:
         account = missing.missing_piece(account)
     elif " ERR" in account:
-        account = missing.wrong_checksum(account)
+        account = wrong_checksum.wrong_checksum(account)
         writer.write_file(account, "account_numbers_controlled")
 
 

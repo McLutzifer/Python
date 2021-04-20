@@ -16,21 +16,6 @@ possible_alternatives = {
     9: [5, 8]
     }
 
-def missing_piece(account):
-    number_of_possibilities = {}
-    '''
-    account.pop()   # remove ILL
-    
-    print("___________________________")    
-    print(account)
-    print("OOOOOOOOOOOOOOOOOOOOOOOOOO")
-
-    multiplier = account.index('?')
-    print(9-multiplier)
-'''
-    pass
-
-
 
 
 def wrong_checksum(account):
