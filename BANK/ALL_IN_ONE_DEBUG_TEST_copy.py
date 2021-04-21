@@ -239,9 +239,14 @@ while (index + 4) < len(dic):
             #----------------------------------------------------------
             list_of_possibilities = []
 
-            account.pop()     # remove ERR
-            possible_account = account.copy()
+            #account.pop()     # remove ERR
+            #possible_account = account.copy()
 
+            for i in range(len(unique)):
+                if checksum(unique[i]) == True:
+                    list_of_possibilities.append(unique[i])
+
+            '''
             for i in range(len(possible_account)):
                 for entry in possible_alternatives[possible_account[i]]:
                     actual_number = possible_account[i]
@@ -252,7 +257,7 @@ while (index + 4) < len(dic):
                         list_of_possibilities.append(to_add)
 
                     possible_account[i] = actual_number
-
+            '''
             #account = possible_outcomes(account, list_of_possibilities)
             #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
