@@ -304,4 +304,66 @@ for account in account_numbers:
 #    USER STORY 3    #
 ######################
 for account in account_numbers:
-    writer.write_file(account, "account_numbers_as_read.txt")
+    #writer.write_file(account, )
+    f = open("account_numbers_as_read.txt", "a")
+
+    for digit in account:
+        digit = str(digit)
+        f.write(digit)
+    f.write("\n")
+    f.close()
+
+
+######################
+#    USER STORY 4    #
+######################
+    if " ERR" in account:
+        #account = wrong_checksum.wrong_checksum(account)
+
+        list_of_possibilities = []
+
+        account.pop()     # remove ERR
+        possible_account = account.copy()
+
+        for i in range(len(possible_account)):
+            for entry in possible_alternatives[possible_account[i]]:
+                actual_number = possible_account[i]
+                possible_account[i] = entry
+
+                if checksum.checksum(possible_account) == True:
+                    to_add=possible_account.copy()
+                    list_of_possibilities.append(to_add)
+
+                possible_account[i] = actual_number
+
+        #account = possible_outcomes(account, list_of_possibilities)
+        #return account
+        if len(list_of_possibilities) == 1:
+            account = list_of_possibilities[0]
+
+        elif len(list_of_possibilities) == 0:
+            account.append(" ILL")
+            #return account
+        else:
+            account.append(" AMB =>")
+            account.append(list_of_possibilities)
+            #return account
+
+        f = open("account_numbers_controlled.txt", "a")
+
+        for digit in account:
+            digit = str(digit)
+            f.write(digit)
+        f.write("\n")
+        f.close()
+
+        #writer.write_file(account, "account_numbers_controlled.txt")
+    else:
+        #writer.write_file(account, "account_numbers_controlled.txt")
+        f = open("account_numbers_controlled.txt", "a")
+
+        for digit in account:
+            digit = str(digit)
+            f.write(digit)
+        f.write("\n")
+        f.close()
