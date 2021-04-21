@@ -333,7 +333,7 @@ for account in account_numbers:
                 actual_number = possible_account[i]
                 possible_account[i] = entry
 
-                if checksum.checksum(possible_account) == True:
+                if checksum(possible_account) == True:
                     to_add=possible_account.copy()
                     list_of_possibilities.append(to_add)
 
