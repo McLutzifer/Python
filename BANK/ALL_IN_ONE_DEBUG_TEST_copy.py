@@ -149,7 +149,7 @@ for index, value in enumerate(translation):
 ######################
 
 
-my_test_file = "testfile.txt"
+my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
 #read_digits = reader.read_file(my_test_file)
 
 
