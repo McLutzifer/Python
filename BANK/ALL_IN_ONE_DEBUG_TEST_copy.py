@@ -229,7 +229,7 @@ while (index + 4) < len(dic):
                         for y in range(5):
                             if y != num:
                                 x = y
-                                if number_in_digits in translation:
+                                if number_in_digits in translation:             # number of digits ändert sich nicht
                                     possibilities.append(number_in_digits)
                             else:
                                 continue
