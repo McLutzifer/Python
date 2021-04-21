@@ -172,7 +172,9 @@ except:
 
 #account_numbers = reader.parse_dictionary(read_digits)
 
-possible_alternatives = { 0: [8], 1: [7], 2: [], 3: [9], 4: [], 5: [6, 9], 6: [5, 8], 7: [1], 8: [0, 6, 9], 9: [5, 8] }
+possible_alternatives = { 0: [8], 1: [7], 2: [], 
+3: [9], 4: [], 5: [6, 9], 6: [5, 8], 
+7: [1], 8: [0, 6, 9], 9: [5, 8]}
 
 dic = read_lines
 
@@ -203,24 +205,24 @@ while (index + 4) < len(dic):
             position += 4
             row_of_numbers.append(check)
             #missing.missing_piece(single, row_of_numbers) 
-            integer = single
-            account = row_of_numbers
-            ##############################################
-            possibilities = []
-            number_in_digits = []
+        integer = single
+        account = row_of_numbers
+        ##############################################
+        possibilities = []
+        number_in_digits = []
 
-            for i in range(3):          # 'translating' symbols into numbers like in digits.py
-                for j in range(3):
-                    if integer[i][j] == " ":
-                        number_in_digits.append(0)
-                    if integer[i][j] == "|":
-                        number_in_digits.append(1)
-                    if integer[i][j] == "_":
-                        number_in_digits.append(2)
-                    if integer[i][j] == "\\":
-                        number_in_digits.append(3)
-                    if integer[i][j] == "/":
-                        number_in_digits.append(4)
+        for i in range(3):          # 'translating' symbols into numbers like in digits.py
+            for j in range(3):
+                if integer[i][j] == " ":
+                    number_in_digits.append(0)
+                if integer[i][j] == "|":
+                    number_in_digits.append(1)
+                if integer[i][j] == "_":
+                    number_in_digits.append(2)
+                if integer[i][j] == "\\":
+                    number_in_digits.append(3)
+                if integer[i][j] == "/":
+                    number_in_digits.append(4)
 
             for i in range(len(number_in_digits)):  
                 temp_copy = number_in_digits.copy()                # checks when one single symbol is replaced, if whole 3x3 represents a number 
@@ -329,15 +331,18 @@ for account in account_numbers:
         possible_account = account.copy()
 
         for i in range(len(possible_account)):
-            for entry in possible_alternatives[possible_account[i]]:
-                actual_number = possible_account[i]
-                possible_account[i] = entry
+            if possible_account[i] < 10:
+                for entry in possible_alternatives[possible_account[i]]:
+                    actual_number = possible_account[i]
+                    possible_account[i] = entry
 
-                if checksum(possible_account) == True:
-                    to_add=possible_account.copy()
-                    list_of_possibilities.append(to_add)
+                    if checksum(possible_account) == True:
+                        to_add=possible_account.copy()
+                        list_of_possibilities.append(to_add)
 
-                possible_account[i] = actual_number
+                    possible_account[i] = actual_number
+            else:
+                pass
 
         #account = possible_outcomes(account, list_of_possibilities)
         #return account
