@@ -226,7 +226,7 @@ while (index + 4) < len(dic):
                 temp_copy = number_in_digits.copy()                # checks when one single symbol is replaced, if whole 3x3 represents a number 
                 #x = number_in_digits[i]
                 for num in range(5):
-                    temp_copy[i] == num
+                    temp_copy[i] = num
                     
                     for trans in translation:
                         if temp_copy == trans:
