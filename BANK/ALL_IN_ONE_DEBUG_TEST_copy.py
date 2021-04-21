@@ -222,17 +222,15 @@ while (index + 4) < len(dic):
                     if integer[i][j] == "/":
                         number_in_digits.append(4)
 
-            for i in range(9):                  # checks when one single symbol is replaced, if whole 3x3 represents a number 
-                x = number_in_digits[i]
+            for i in range(len(number_in_digits)):  
+                temp_copy = number_in_digits.copy()                # checks when one single symbol is replaced, if whole 3x3 represents a number 
+                #x = number_in_digits[i]
                 for num in range(5):
-                    if x == num:
-                        for y in range(5):
-                            if y != num:
-                                x = y
-                                if number_in_digits in translation:             # number of digits ändert sich nicht
-                                    possibilities.append(number_in_digits)
-                            else:
-                                continue
+                    temp_copy[i] == num
+                    
+                    for trans in translation:
+                        if temp_copy == trans:
+                            possibilities.append(number_in_digits)
                         x = num
 
             unique = [] 
