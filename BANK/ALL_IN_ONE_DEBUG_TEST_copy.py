@@ -151,6 +151,7 @@ for index, value in enumerate(translation):
 
 my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
 #read_digits = reader.read_file(my_test_file)
+#my_test_file = "BANK/testfile.txt"
 
 
 read_lines = {}
@@ -176,10 +177,12 @@ possible_alternatives = { 0: [8], 1: [7], 2: [],
 3: [9], 4: [], 5: [6, 9], 6: [5, 8], 
 7: [1], 8: [0, 6, 9], 9: [5, 8]}
 
+def missing(to_check):
+
+    return to_check
+
 dic = read_lines
-
 all_accounts = []
-
 index = 0
 while (index + 4) < len(dic):
     position = 0
