@@ -54,13 +54,14 @@ def parse_dictionary(dic):
             # single to translator
             ## compare
             
-            single = translator.translate(single)
+            single = translator.translate(single) 
             
 
             if single in digits.translation:    # check if single is value in translation_dic and if yes return key
                 check = digits.translation.index(single)
-                position += 4
                 row_of_numbers.append(check)
+                position += 4
+                print("ABER BIS HIER HER")
             else:
                 #########  TRY TO FIND WHAT IT IS
                 print("bis hier her geht'S")
