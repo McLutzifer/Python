@@ -27,11 +27,7 @@ def read_file(filename):
 
 
 
-#################################
-possible_alternatives = { 0: [8], 1: [7], 2: [], 
-3: [9], 4: [], 5: [6, 9], 6: [5, 8], 
-7: [1], 8: [0, 6, 9], 9: [5, 8]}
-##################################
+
 
 def parse_dictionary(dic):
 
@@ -67,6 +63,7 @@ def parse_dictionary(dic):
             else:
                 #########  TRY TO FIND WHAT IT IS
                 pass()
+                ''' alternatives.illegible() '''
                 #check = "?"
                 #position += 4
                 #row_of_numbers.append(check)
