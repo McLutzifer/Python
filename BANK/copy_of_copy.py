@@ -34,20 +34,6 @@ my_test_file = "/home/lukas/Documents/Programming/Python/BANK/testfile.txt"
 #my_test_file = "BANK/testfile.txt"
 
 
-read_lines = {}
-try:
-    with open(my_test_file, 'r') as file:
-        lines = file.readlines()
-
-        count = 0
-        for line in lines:
-            count += 1
-            read_lines[count] = line
-
-        #if len(read_lines) %4 != 0:
-            #error_input()
-except:
-    print("An Error occured - unable to read file")
 
 #return read_lines
 
@@ -56,6 +42,9 @@ except:
 possible_alternatives = { 0: [8], 1: [7], 2: [], 
 3: [9], 4: [], 5: [6, 9], 6: [5, 8], 
 7: [1], 8: [0, 6, 9], 9: [5, 8]}
+
+
+
 
 def missing(to_check):
 
