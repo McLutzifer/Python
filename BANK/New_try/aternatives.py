@@ -6,11 +6,37 @@ possible_alternatives = { 0: [8], 1: [7], 2: [],
 7: [1], 8: [0, 6, 9], 9: [5, 8]}
 ##################################
 
-def wrong_checksum():
+possible_alternatives_hex = {
+    0: [8],
+    1: [7],
+    2: [],
+    3: [9],
+    4: [],
+    5: [6, 9],
+    6: [5, 8, 15],
+    7: [1],
+    8: [0, 6, 9, 10],
+    9: [5, 8],
+    10: [8],
+    11: [13],
+    12: [],
+    13: [11],
+    14: [],
+    15: [6],
+    16: []}
+
+def illegible(single, questionmark = 0):
+    # if questionmark == 0 ERR justwrong checksum check all numbers
     pass
 
-def illegible(single):
+
+def wrong_checksum(single):
     possibilities = []
+    for i in range(9):  # len(account number)
+        temp_copy = single.copy()
+
+
+
 
     #for i in range(len(single)):   # 9?
     for i in range(9):     #len(single)

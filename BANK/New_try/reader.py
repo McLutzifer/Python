@@ -60,6 +60,7 @@ def parse_dictionary(dic):
 
             else:
                 account_numbers.append('?')
+                questionmark = single
                 position += 4
                 #row_of_numbers.append(check)
                 #missing.missing_piece(single, row_of_numbers) 
@@ -67,7 +68,7 @@ def parse_dictionary(dic):
     # print out account numbers to file like in Part 3
         if '?' in account_numbers:
             account_numbers.append(" ILL")
-            # illegibl    -> add to second file
+            # illegibl (account, questionmark)    -> add to second file
         else:
             if checksum.checksum == False:
                 account_numbers.append(" ERR")
