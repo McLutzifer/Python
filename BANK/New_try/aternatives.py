@@ -51,7 +51,7 @@ def illegible(account, questionmark):
         account[position] = possibilities[0]
         return account
     elif len(possibilities) == 0:
-        pass  # ILL undsoweiter
+        pass  # ILL undsoweiter     -> new writefile    !!!dont return
     else:
         pass   # AMB unsw
 
