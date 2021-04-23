@@ -46,9 +46,6 @@ possible_alternatives = { 0: [8], 1: [7], 2: [],
 
 
 
-def missing(to_check):
-
-    return to_check
 
 dic = read_lines
 all_accounts = []

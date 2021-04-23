@@ -9,7 +9,7 @@ def error_input(text):
 def read_file(filename):
     read_lines = {}
     try:
-        with open(my_test_file, 'r') as file:
+        with open(filename, 'r') as file:
             lines = file.readlines()
 
             count = 0
@@ -63,6 +63,7 @@ def parse_dictionary(dic):
                 row_of_numbers.append(check)
             else:
                 #########  TRY TO FIND WHAT IT IS
+                print("bis hier her geht'S")
                 pass
                 ''' alternatives.illegible() '''
                 #check = "?"

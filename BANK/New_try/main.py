@@ -6,7 +6,11 @@ import digits, reader
 ######################
 
 
-my_test_file = "/home/lukas/Documents/Programming/Python/BANK/New_try/testfile.txt"
+#my_test_file = "/home/lukas/Documents/Programming/Python
+# /BANK/New_try/testfile.txt"
+
+my_test_file = "testfile.txt"
+
 
 read_digits = reader.read_file(my_test_file)
 
