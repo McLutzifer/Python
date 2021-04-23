@@ -1,13 +1,11 @@
-import translator
-import sys
-import digits
-import writer
-import checksum
+import sys, translator, digits, writer, checksum
 
 
 def error_input(text):
     print(text)
     sys.exit()
+
+
 
 def read_file(filename):
     read_lines = {}
@@ -26,9 +24,6 @@ def read_file(filename):
         error_input("An Error occured - unable to read file")
 
     return read_lines
-
-
-
 
 
 
