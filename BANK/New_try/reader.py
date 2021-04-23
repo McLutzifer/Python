@@ -2,6 +2,7 @@ import translator
 import sys
 import digits
 import writer
+import checksum
 
 
 def error_input(text):
@@ -75,14 +76,15 @@ def parse_dictionary(dic):
             account_numbers.append(" ILL")
             # illegibl    -> add to second file
 
+        else:
+            if checksum.checksum == False:
+                account_numbers.append(" ERR")
+
+        writer.write_file("Accountnumbers_as_read.txt", account_numbers)
+
         index += 4
-
         #####
-        if '?' in row_of_numbers:
-            row_of_numbers.append( "ILL")
-        #####
-        all_accounts.append(row_of_numbers)
 
-    writer.write_file("Accountnumbers_as_read.txt", account_numbers)
+    
 
     return all_accounts      # return a list of lists with all accountnumbers from file
