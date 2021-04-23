@@ -1,6 +1,6 @@
-#import error
 import translator
 import sys
+import digits
 
 def error_input(text):
     print(text)
