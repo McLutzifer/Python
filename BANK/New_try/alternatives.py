@@ -2,29 +2,13 @@ import digits
 
 #################################
 possible_alternatives = { 0: [8], 1: [7], 2: [], 
-3: [9], 4: [], 5: [6, 9], 6: [5, 8], 
-7: [1], 8: [0, 6, 9], 9: [5, 8]}
+                        3: [9], 4: [], 5: [6, 9], 6: [5, 8],
+                        7: [1], 8: [0, 6, 9], 9: [5, 8]}
+
+possible_alternatives_hex = {0: [8], 1: [7], 2: [], 3: [9], 4: [], 5: [6, 9],
+                            6: [5, 8, 15], 7: [1], 8: [0, 6, 9, 10], 9: [5, 8], 10: [8], 11: [13],
+                            12: [], 13: [11], 14: [], 15: [6], 16: []}
 ##################################
-
-possible_alternatives_hex = {
-    0: [8],
-    1: [7],
-    2: [],
-    3: [9],
-    4: [],
-    5: [6, 9],
-    6: [5, 8, 15],
-    7: [1],
-    8: [0, 6, 9, 10],
-    9: [5, 8],
-    10: [8],
-    11: [13],
-    12: [],
-    13: [11],
-    14: [],
-    15: [6],
-    16: []}
-
 
 
 
@@ -54,7 +38,7 @@ def illegible(account, questionmark):
         account.append(" ILL")
         return account
     else:
-        account.append(" AMB " + str(possibilities))
+        account.append(" AMB " + str(possibilities))    # forgot first check id checksum is correct
 
 
     #take questionmark [0, 2, 0, 1, 2, 1, 1, 2]
@@ -71,6 +55,8 @@ illegible(account_test, questi)
 
 
 def wrong_checksum(single):
+    pass
+    '''
     possibilities = []
     for i in range(9):  # len(account number)
         temp_copy = single.copy()
@@ -101,3 +87,4 @@ def wrong_checksum(single):
     else:
         # go to checksum 
         pass
+    '''
