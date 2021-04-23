@@ -1,11 +1,12 @@
-import sys, translator, digits, writer, checksum
-
-
+import sys, translator, digits, writer, checksum, alternatives
 
 
 
 
 def parse_dictionary(dic):
+
+    newfile = "account_numbers_after_cleaning.txt"
+
 
     all_accounts = []
     index = 0
@@ -45,16 +46,23 @@ def parse_dictionary(dic):
     # print out account numbers to file like in Part 3
         if '?' in account_numbers:
             account_numbers.append(" ILL")
-            # illegibl (account, questionmark)    -> add to second file
-        else:
-            if checksum.checksum == False:
-                account_numbers.append(" ERR")
-                #wrong checksum    -> add to second file
+            writer.write_file(account_numbers, "Accountnumbers_as_read.txt")
+            account_numbers = alternatives.illegible(account_numbers, questionmark)    #-> add to second file
+            writer.write_file(account_numbers, newfile)
 
-        writer.write_file(account_numbers, "Accountnumbers_as_read.txt")
+
+        elif checksum.checksum == False:
+            account_numbers.append(" ERR")
+            writer.write_file(account_numbers, "Accountnumbers_as_read.txt")
+            account_numbers = alternatives.wrong_checksum(account_numbers) #wrong checksum    -> add to second file
+            writer.write_file(account_numbers, newfile)
+
+        else:
+            writer.write_file(account_numbers, "Accountnumbers_as_read.txt")
+            writer.write_file(account_numbers, newfile)
 
         index += 4
         #####
+#writer.write_file(account_numbers, newfile)
 
-
-    return all_accounts      # return a list of lists with all accountnumbers from file
+    #return all_accounts      # return a list of lists with all accountnumbers from file

@@ -49,11 +49,12 @@ def illegible(account, questionmark):
     # unique stuff
     if len(possibilities) == 1:
         account[position] = possibilities[0]
-        return account
+        return account                   
     elif len(possibilities) == 0:
-        pass  # ILL undsoweiter     -> new writefile    !!!dont return
+        account.append(" ILL")
+        return account
     else:
-        pass   # AMB unsw
+        account.append(" AMB " + str(possibilities))
 
 
     #take questionmark [0, 2, 0, 1, 2, 1, 1, 2]

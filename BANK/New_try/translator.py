@@ -1,5 +1,5 @@
 def translate(hex):
-    """translates input in row of digits"""
+    '''translates input in row of digits'''
     
     number = []
     for i in range(3):

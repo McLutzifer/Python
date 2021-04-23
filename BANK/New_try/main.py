@@ -1,14 +1,10 @@
-import reader
+import parser
 import sys
 
 
 def error_input(text):
     print(text)
     sys.exit()
-
-
-
-
 
 
 ######################
@@ -44,6 +40,6 @@ except:
 
 #read_digits = reader.read_file(my_test_file)
 
-account_numbers = reader.parse_dictionary(read_digits)
+account_numbers = parser.parse_dictionary(read_digits)
 
 # print(account_numbers)
