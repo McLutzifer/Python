@@ -1,4 +1,5 @@
 #import error
+import translator
 
 def error_input(text):
     print(text)
@@ -36,7 +37,7 @@ def parse_dictionary(dic):
 
     all_accounts = []
     index = 0
-    
+
     while (index + 4) < len(dic):
         position = 0
         row_of_numbers = []
@@ -51,7 +52,26 @@ def parse_dictionary(dic):
             single.append(line_1[position:position+3])
             single.append(line_2[position:position+3])
             single.append(line_3[position:position+3])
+
+            ######  import hexadecimal translated in digits
+            # single to translator
+            ## compare
             
+            single = translator.translate(single)
+            
+
+            if single in digits.translation:    # check if single is value in translation_dic and if yes return key
+                check = digits.translation.index(single)
+                position += 4
+                row_of_numbers.append(check)
+            else:
+                #########  TRY TO FIND WHAT IT IS
+                check = "?"
+                position += 4
+                row_of_numbers.append(check)
+                missing.missing_piece(single, row_of_numbers) 
+
+            '''
             if single in digits_hex:
                 check = digits_hex.index(single)
                 position += 4
@@ -61,7 +81,7 @@ def parse_dictionary(dic):
                 position += 4
                 row_of_numbers.append(check)
                 missing.missing_piece(single, row_of_numbers) 
-
+            '''
         index += 4
         all_accounts.append(row_of_numbers)
 
