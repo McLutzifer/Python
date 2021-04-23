@@ -25,9 +25,48 @@ possible_alternatives_hex = {
     15: [6],
     16: []}
 
-def illegible(single, questionmark = 0):
+
+
+
+def illegible(account, questionmark):
     # if questionmark == 0 ERR justwrong checksum check all numbers
-    pass
+    position = account.index('?')
+
+    possibilities = []
+
+    copies = digits.translation.copy()
+    for copy in copies:
+        temp = questionmark
+
+        for i in range(len(copy)):
+            x = copy[i]
+            for num in range(5):
+                copy[i] = num      #replace one digit of copy and see if it matches with ?
+                if copy == questionmark:
+                    possibilities.append(copy)
+            copy[i] = x
+
+    # unique stuff
+    if len(possibilities) == 1:
+        account[position] = possibilities[0]
+        return account
+    elif len(possibilities) == 0:
+        pass  # ILL undsoweiter
+    else:
+        pass   # AMB unsw
+
+
+    #take questionmark [0, 2, 0, 1, 2, 1, 1, 2]
+    # loop through ever digithextranslate anc check if only one diiference
+
+
+account_test = [1,8,9,4,3,0,'?',6]
+questi = [0,2,0,0,2,1,0,0,1]    # should be 7
+
+illegible(account_test, questi)
+
+
+
 
 
 def wrong_checksum(single):
