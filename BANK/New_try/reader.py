@@ -37,7 +37,8 @@ def parse_dictionary(dic):
 
     while (index + 4) < len(dic):
         position = 0
-        row_of_numbers = []
+        row_of_numbers = []     # one list for signs in digits
+        account_numbers = []    # onelist for actual accounts to print to file
 
         line_1 = dic[index+1]
         line_2 = dic[index+2]
@@ -56,16 +57,20 @@ def parse_dictionary(dic):
             
             single = translator.translate(single) 
             
-
             if single in digits.translation:    # check if single is value in translation_dic and if yes return key
                 check = digits.translation.index(single)
                 row_of_numbers.append(check)
+                #account_numbers.append()
                 position += 4
                 print("ABER BIS HIER HER")
+
+                writer.writefile("Accountnumbers_as_read.txt")
+
             else:
                 #########  TRY TO FIND WHAT IT IS
                 print("bis hier her geht'S")
-                pass
+                position +=4
+                
                 ''' alternatives.illegible() '''
                 #check = "?"
                 #position += 4

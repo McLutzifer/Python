@@ -133,4 +133,4 @@ for h in range(16):
 
 
 
-print(translation_dict)
+#print(translation_dict)
