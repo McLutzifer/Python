@@ -15,3 +15,6 @@ def translate(hex):
             elif hex[i][j] == "/":
                 number.append(4)
     return number
+
+
+

@@ -1,6 +1,8 @@
 import translator
 import sys
 import digits
+import writer
+
 
 def error_input(text):
     print(text)
@@ -50,11 +52,7 @@ def parse_dictionary(dic):
             single.append(line_1[position:position+3])
             single.append(line_2[position:position+3])
             single.append(line_3[position:position+3])
-
-            ######  import hexadecimal translated in digits
-            # single to translator
-            ## compare
-            
+           
             single = translator.translate(single) 
             
             if single in digits.translation:    # check if single is value in translation_dic and if yes return key
@@ -62,20 +60,20 @@ def parse_dictionary(dic):
                 row_of_numbers.append(check)
                 #account_numbers.append()
                 position += 4
-                print("ABER BIS HIER HER")
-
-                writer.writefile("Accountnumbers_as_read.txt")
+                #writer.writefile("Accountnumbers_as_read.txt")
 
             else:
-                #########  TRY TO FIND WHAT IT IS
-                print("bis hier her geht'S")
-                position +=4
-                
+                #########  TRY TO FIND WHAT IT IS            
                 ''' alternatives.illegible() '''
-                #check = "?"
-                #position += 4
+                check = "?"
+                position += 4
                 #row_of_numbers.append(check)
                 #missing.missing_piece(single, row_of_numbers) 
+
+    # print out account numbers to file like in Part 3
+        if '?' in account_numbers:
+            account_numbers.append(" ILL")
+            # illegibl    -> add to second file
 
         index += 4
 
@@ -84,5 +82,7 @@ def parse_dictionary(dic):
             row_of_numbers.append( "ILL")
         #####
         all_accounts.append(row_of_numbers)
+
+    writer.write_file("Accountnumbers_as_read.txt", account_numbers)
 
     return all_accounts      # return a list of lists with all accountnumbers from file

@@ -10,8 +10,11 @@ def wrong_checksum():
     pass
 
 def illegible(single):
-    for i in range(len(single)):    # 9?
-        temp_copy = single.copy()                # checks when one single symbol is replaced, if whole 3x3 represents a number 
+    possibilities = []
+
+    #for i in range(len(single)):   # 9?
+    for i in range(9):     #len(single)
+        temp_copy = single.copy()       # checks when one single symbol is replaced, if whole 3x3 represents a number 
         #x = number_in_digits[i]
         for num in range(5):
             temp_copy[i] = num
