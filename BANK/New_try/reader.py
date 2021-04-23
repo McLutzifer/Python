@@ -66,22 +66,12 @@ def parse_dictionary(dic):
                 row_of_numbers.append(check)
             else:
                 #########  TRY TO FIND WHAT IT IS
-                check = "?"
-                position += 4
-                row_of_numbers.append(check)
-                missing.missing_piece(single, row_of_numbers) 
+                pass()
+                #check = "?"
+                #position += 4
+                #row_of_numbers.append(check)
+                #missing.missing_piece(single, row_of_numbers) 
 
-            '''
-            if single in digits_hex:
-                check = digits_hex.index(single)
-                position += 4
-                row_of_numbers.append(check)
-            else:
-                check = "?"
-                position += 4
-                row_of_numbers.append(check)
-                missing.missing_piece(single, row_of_numbers) 
-            '''
         index += 4
         all_accounts.append(row_of_numbers)
 
