@@ -1,3 +1,5 @@
+import translator
+
 one = [
     "   ",
     "  |",
@@ -98,7 +100,16 @@ f = [
 digits = [zero, one, two, three, four, five, six, seven, eight, nine]
 digits_hex = [zero, one, two, three, four, five, six, seven, eight, nine, a, b, c, d, e, f]
 
+for h in range(16):
+    translation = []
+    number = translator.translate(digits_hex[h])
+    translation.append(number)
 
+translation_dict = {}
+for index, value in enumerate(translation):
+    translation_dict[index] = value
+
+'''
 translation = []
 translation_dict = {}
 for h in range(16):
@@ -116,10 +127,8 @@ for h in range(16):
             if digits_hex[h][i][j] == "/":
                 number.append(4)
     translation.append(number)
+'''
 
-translation_dict = {}
-for index, value in enumerate(translation):
-    translation_dict[index] = value
 
 
 
