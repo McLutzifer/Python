@@ -24,10 +24,11 @@ def illegible(single):
     unique = [] 
     [unique.append(x) for x in possibilities if x not in unique]
 
-    
+
     if len(unique) == 1:
         return unique[0]
     elif len(unique) == 0:
         return '?'
     else:
+        # go to checksum 
         pass

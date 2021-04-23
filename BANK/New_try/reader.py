@@ -1,5 +1,6 @@
 #import error
 import translator
+import sys
 
 def error_input(text):
     print(text)
@@ -62,7 +63,7 @@ def parse_dictionary(dic):
                 row_of_numbers.append(check)
             else:
                 #########  TRY TO FIND WHAT IT IS
-                pass()
+                pass
                 ''' alternatives.illegible() '''
                 #check = "?"
                 #position += 4
@@ -70,6 +71,11 @@ def parse_dictionary(dic):
                 #missing.missing_piece(single, row_of_numbers) 
 
         index += 4
+
+        #####
+        if '?' in row_of_numbers:
+            row_of_numbers.append( "ILL")
+        #####
         all_accounts.append(row_of_numbers)
 
     return all_accounts      # return a list of lists with all accountnumbers from file
