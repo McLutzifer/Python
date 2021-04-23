@@ -1,3 +1,9 @@
+#import error
+
+def error_input(text):
+    print(text)
+    sys.exit()
+
 def read_file(filename):
     read_lines = {}
     try:
@@ -9,9 +15,9 @@ def read_file(filename):
                 count += 1
                 read_lines[count] = line
 
-            #if len(read_lines) %4 != 0:
-                #error_input()
+            if len(read_lines) %4 != 0:
+                error_input("unexpected number on lines")
     except:
-        print("An Error occured - unable to read file")
+        error_input("An Error occured - unable to read file")
 
-    #return read_lines
+    return read_lines
