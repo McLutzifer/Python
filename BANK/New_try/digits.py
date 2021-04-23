@@ -100,8 +100,9 @@ f = [
 digits = [zero, one, two, three, four, five, six, seven, eight, nine]
 digits_hex = [zero, one, two, three, four, five, six, seven, eight, nine, a, b, c, d, e, f]
 
+
+translation = []
 for h in range(16):
-    translation = []
     number = translator.translate(digits_hex[h])
     translation.append(number)
 
