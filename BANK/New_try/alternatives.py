@@ -36,7 +36,7 @@ def illegible(account, questionmark):
 
     copies = digits.translation.copy()
     for copy in copies:
-        temp = questionmark
+        #temp = questionmark
 
         for i in range(len(copy)):
             x = copy[i]
