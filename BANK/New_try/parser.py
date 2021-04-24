@@ -47,6 +47,7 @@ def parse_dictionary(dic):
         if '?' in account_numbers:
             account_numbers.append(" ILL")
             writer.write_file(account_numbers, "Accountnumbers_as_read.txt")
+            account_numbers.pop()
             account_numbers = alternatives.illegible(account_numbers, questionmark)    #-> add to second file
             writer.write_file(account_numbers, newfile)
 

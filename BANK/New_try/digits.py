@@ -106,6 +106,7 @@ for h in range(16):
     number = translator.translate(digits_hex[h])
     translation.append(number)
 
+
 translation_dict = {}
 for index, value in enumerate(translation):
     translation_dict[index] = value
