@@ -22,8 +22,20 @@ def check_possibilities(account, possibilities):
         account.append(" AMB " + str(possibilities))    # forgot first check id checksum is correct
 '''
 
-def check_possibilities(position):
-    pass
+
+def check_possibilities(to_check):
+    possibilities = []
+    for element in digits.translation:
+        copy = to_check.copy()
+        for i in range(len(to_check)):
+            for num in range(5):
+                save = copy[i]
+                copy[i] = num
+                if copy == element:
+                    possibilities.append(copy.copy())
+                copy[i] = save
+        return possibilities
+
 
 def illegible(account, questionmark):
     position = account.index('?')
@@ -36,7 +48,7 @@ def illegible(account, questionmark):
             position = account[i]
             check_possibilities(position)
     '''
-    possibilities = []
+
 
     # why change copy?? not questionmark?
     '''
@@ -50,7 +62,9 @@ def illegible(account, questionmark):
                     possibilities.append(copy)
             copy[i] = x
     '''
+    possibilities = check_possibilities(questionmark)
 
+    '''
     for element in digits.translation:
 
         copy = questionmark.copy()
@@ -61,6 +75,7 @@ def illegible(account, questionmark):
                 if copy == element:
                     possibilities.append(copy.copy())
                 copy[i] = save
+        '''
 
     unique = []
     [unique.append(x) for x in possibilities if x not in unique]
@@ -84,14 +99,36 @@ def illegible(account, questionmark):
 # illegible(account_test, questi)
 
 
-
-
-
 def wrong_checksum(account):
 
     for i in range(len(account)):
-        pass
+        position = i
 
+    possibilities = []
+
+    for element in digits.translation:
+
+        copy = account[i].copy()
+        for i in range(len(account[i])):
+            for num in range(5):
+                save = copy[i]
+                copy[i] = num
+                if copy == element:
+                    possibilities.append(copy.copy())
+                copy[i] = save
+
+    unique = []
+    [unique.append(x) for x in possibilities if x not in unique]
+
+    if len(unique) == 1:
+        account[position] = unique[0]
+        return account
+    elif len(unique) == 0:
+        account.append(" ILL")
+        return account
+    else:
+        account.append(" AMB " + str(unique))    # forgot first check id checksum is correct
+        return account
 
     '''
     possibilities = []
