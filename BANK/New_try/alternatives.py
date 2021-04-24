@@ -31,6 +31,10 @@ def illegible(account, questionmark):
             copy[i] = x
 
     # unique stuff
+    unique = []
+    [unique.append(x) for x in possibilities if x not in unique]
+    ##################################
+
     if len(possibilities) == 1:
         account[position] = possibilities[0]
         return account                   
