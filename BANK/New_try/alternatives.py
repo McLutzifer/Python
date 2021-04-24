@@ -73,7 +73,7 @@ def illegible(account, questionmark):
         return account
     else:
         account.append(" AMB " + str(unique))    # forgot first check id checksum is correct
-
+        return account
 
 # account_test = [1,8,9,4,3,0,'?',6]
 # questi = [0,2,0,0,2,1,0,0,1]    # should be 7

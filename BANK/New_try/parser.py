@@ -50,7 +50,7 @@ def parse_dictionary(dic):
             account_numbers = alternatives.illegible(account_numbers, questionmark)    #-> add to second file
             writer.write_file(account_numbers, newfile)
 
-        elif checksum.checksum == False:
+        elif checksum.checksum(account_numbers) == False:
             account_numbers.append(" ERR")
             writer.write_file(account_numbers, "Accountnumbers_as_read.txt")
             account_numbers.pop()
