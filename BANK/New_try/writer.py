@@ -1,7 +1,6 @@
 def write_file(account, filename):
 
     f = open(filename, "a")
-
     for digit in account:
         if type(digit) == int:
             if digit >= 10:

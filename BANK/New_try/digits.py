@@ -111,27 +111,3 @@ translation_dict = {}
 for index, value in enumerate(translation):
     translation_dict[index] = value
 
-'''
-translation = []
-translation_dict = {}
-for h in range(16):
-    number = []
-    for i in range(3):
-        for j in range(3):
-            if digits_hex[h][i][j] == " ":
-                number.append(0)
-            if digits_hex[h][i][j] == "|":
-                number.append(1)
-            if digits_hex[h][i][j] == "_":
-                number.append(2)
-            if digits_hex[h][i][j] == "\\":
-                number.append(3)
-            if digits_hex[h][i][j] == "/":
-                number.append(4)
-    translation.append(number)
-'''
-
-
-
-
-#print(translation_dict)
