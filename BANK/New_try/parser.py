@@ -55,7 +55,7 @@ def parse_dictionary(dic):
             writer.write_file(account_numbers, "Accountnumbers_as_read.txt")
             account_numbers.pop()
             account_numbers = alternatives.wrong_checksum(account_numbers) #wrong checksum    -> add to second file
-
+            writer.write_file(account_numbers, newfile)
             '''
             for account in account_numbers:
                 account_numbers = alternatives.illegible(account_numbers, account)
