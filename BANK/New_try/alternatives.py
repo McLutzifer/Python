@@ -41,13 +41,12 @@ def illegible(account, questionmark):
         account.append(" AMB " + str(possibilities))    # forgot first check id checksum is correct
 
 
-    #take questionmark [0, 2, 0, 1, 2, 1, 1, 2]
-    # loop through ever digithextranslate anc check if only one diiference
-
-
 account_test = [1,8,9,4,3,0,'?',6]
 questi = [0,2,0,0,2,1,0,0,1]    # should be 7
 
+
+
+# for debugging only
 illegible(account_test, questi)
 
 

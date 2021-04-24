@@ -33,13 +33,6 @@ try:
 except:
     error_input("An Error occured - unable to read file")
 
-        #if len(read_lines) %4 != 0:
-            #error_input("unexpected number on lines")
-
-
-
 #read_digits = reader.read_file(my_test_file)
-
 account_numbers = parser.parse_dictionary(read_digits)
-
 # print(account_numbers)

@@ -50,12 +50,17 @@ def parse_dictionary(dic):
             account_numbers = alternatives.illegible(account_numbers, questionmark)    #-> add to second file
             writer.write_file(account_numbers, newfile)
 
-
         elif checksum.checksum == False:
             account_numbers.append(" ERR")
             writer.write_file(account_numbers, "Accountnumbers_as_read.txt")
             account_numbers = alternatives.wrong_checksum(account_numbers) #wrong checksum    -> add to second file
+            account_numbers.pop()
+            '''
+            for account in account_numbers:
+                account_numbers = alternatives.illegible(account_numbers, account)
             writer.write_file(account_numbers, newfile)
+            '''
+            # loop through entry and use every input as questionmark
 
         else:
             writer.write_file(account_numbers, "Accountnumbers_as_read.txt")
