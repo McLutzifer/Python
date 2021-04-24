@@ -10,18 +10,38 @@ possible_alternatives_hex = {0: [8], 1: [7], 2: [], 3: [9], 4: [], 5: [6, 9],
                             12: [], 13: [11], 14: [], 15: [6], 16: []}
 ##################################
 
+'''
+def check_possibilities(account, possibilities):
+    if len(possibilities) == 1:
+        account[position] = possibilities[0]
+        return account
+    elif len(possibilities) == 0:
+        account.append(" ILL")
+        return account
+    else:
+        account.append(" AMB " + str(possibilities))    # forgot first check id checksum is correct
+'''
 
+def check_possibilities(position):
+    pass
 
 def illegible(account, questionmark):
-    # if questionmark == 0 ERR justwrong checksum check all numbers
     position = account.index('?')
-
+    '''
+    if '?' in account:
+        position = account.index('?')
+        check_possibilities(position)
+    else:
+        for i in range(len(account)):
+            position = account[i]
+            check_possibilities(position)
+    '''
     possibilities = []
 
+    # why change copy?? not questionmark?
+    '''
     copies = digits.translation.copy()
     for copy in copies:
-        #temp = questionmark
-
         for i in range(len(copy)):
             x = copy[i]
             for num in range(5):
@@ -29,36 +49,50 @@ def illegible(account, questionmark):
                 if copy == questionmark:
                     possibilities.append(copy)
             copy[i] = x
+    '''
 
-    # unique stuff
+    for element in digits.translation:
+
+        copy = questionmark.copy()
+        for i in range(len(questionmark)):
+            for num in range(5):
+                save = copy[i]
+                copy[i] = num
+                if copy == element:
+                    possibilities.append(copy.copy())
+                copy[i] = save
+
     unique = []
     [unique.append(x) for x in possibilities if x not in unique]
-    ##################################
 
-    if len(possibilities) == 1:
-        account[position] = possibilities[0]
-        return account                   
-    elif len(possibilities) == 0:
+    if len(unique) == 1:
+        account[position] = unique[0]
+        return account
+    elif len(unique) == 0:
         account.append(" ILL")
         return account
     else:
-        account.append(" AMB " + str(possibilities))    # forgot first check id checksum is correct
+        account.append(" AMB " + str(unique))    # forgot first check id checksum is correct
 
 
-account_test = [1,8,9,4,3,0,'?',6]
-questi = [0,2,0,0,2,1,0,0,1]    # should be 7
+# account_test = [1,8,9,4,3,0,'?',6]
+# questi = [0,2,0,0,2,1,0,0,1]    # should be 7
 
 
 
 # for debugging only
-illegible(account_test, questi)
+# illegible(account_test, questi)
 
 
 
 
 
-def wrong_checksum(single):
-    pass
+def wrong_checksum(account):
+
+    for i in range(len(account)):
+        pass
+
+
     '''
     possibilities = []
     for i in range(9):  # len(account number)
