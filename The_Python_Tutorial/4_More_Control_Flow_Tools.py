@@ -18,9 +18,8 @@ for i in range(5):
 newlist = list(range(5, 10))
 print(newlist)
 
-n = 17
 
-for i in range(2, 10):
+for n in range(2, 10):
     for x in range(2, n):
         if n % x == 0:
             print(n, 'equals', x, '*', n//x)
