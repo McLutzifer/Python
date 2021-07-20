@@ -45,3 +45,8 @@ print(a)
 tel = {'jack': 4098, 'sape': 4139}
 tel['guido'] = 4127
 print(tel)
+
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k, v in knights.items():
+    print(k, v)
+    print('---------')
