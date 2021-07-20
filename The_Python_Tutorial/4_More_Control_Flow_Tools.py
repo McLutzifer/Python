@@ -72,3 +72,12 @@ def ask_ok(prompt, retries=4, reminder='Please try again!'):
         print(reminder)
 
 ask_ok('Do you really want to quit?', 2,"C'mon")
+
+
+##########################################
+#        Default Argument Values         #
+##########################################
+
+def cheeseshop(kind, *arguments, **keywords):
+    print("-- Do you have any", kind, "?")
+    print("-- I'm sorry")
