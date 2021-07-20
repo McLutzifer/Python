@@ -33,5 +33,12 @@ print(u[1][2])
 basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
 print(basket)
 
-a = {x for x in 'abracadabra'}
+a = {x for x in 'abracadabra' if x not in 'abc'}
 print(a)
+
+
+
+#########################
+#     Dictionaries      #
+#########################
+
