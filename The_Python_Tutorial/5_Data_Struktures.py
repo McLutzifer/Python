@@ -24,3 +24,11 @@ print(t[0])
 
 u = t, (1, 2, 3, 4, 5)
 print(u[1][2])
+
+
+#########################
+#          Sets         #
+#########################
+
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+print(basket)
