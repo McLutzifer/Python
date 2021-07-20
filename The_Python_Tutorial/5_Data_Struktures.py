@@ -32,3 +32,6 @@ print(u[1][2])
 
 basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
 print(basket)
+
+a = {x for x in 'abracadabra'}
+print(a)
