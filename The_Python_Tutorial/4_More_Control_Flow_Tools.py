@@ -102,3 +102,6 @@ y = concat("earth", "mars", "venus", sep=".")
 
 print(x)
 print(y)
+
+args = [3, 6]
+print(list(range(*args)))
