@@ -30,3 +30,6 @@ print('{1} and {0}'.format('spam', 'eggs'))
 
 print('The story of {0}, {1}, and {other}.'.format('Bill', 'Manfred', other='Georg'))
 print('The story of {1}, {0}, and {other}.'.format('Bill', 'Manfred', other='Georg'))
+
+for x in range(1, 11):
+     print('{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x))
