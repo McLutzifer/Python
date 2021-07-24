@@ -24,3 +24,9 @@ for name, phone in table.items():
 
 
 print('We are the {} who say "{}!"'.format('knights', 'Ni'))
+print('{0} and {1}'.format('spam', 'eggs'))
+print('{1} and {0}'.format('spam', 'eggs'))
+
+
+print('The story of {0}, {1}, and {other}.'.format('Bill', 'Manfred', other='Georg'))
+print('The story of {1}, {0}, and {other}.'.format('Bill', 'Manfred', other='Georg'))
