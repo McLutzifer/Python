@@ -16,3 +16,8 @@ print('{:-9} YES votes {:2.2%}'.format(yes_votes, percentage))
 hello = 'Hello, world\n'
 hellos = repr(hello)
 print(hellos)
+
+
+table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
+for name, phone in table.items():
+    print(f'{name:10} ==> {phone:10d}')
