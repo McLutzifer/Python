@@ -4,4 +4,6 @@
 #print(4+'spam')
 #TypeError
 
-print(4 + spam)
+#print(4 + spam)
+#NameError
+
