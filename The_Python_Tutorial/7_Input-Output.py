@@ -44,3 +44,6 @@ for x in range(1, 11):
 print('12'.zfill(5))
 print('-3.14'.zfill(7))
 print('3.1415926539'.zfill(5))
+
+
+f = open('workfile', 'w')
