@@ -47,3 +47,9 @@ print('3.1415926539'.zfill(5))
 
 
 f = open('workfile', 'w')
+f.close()
+
+with open('workfile') as f:
+    read_data = f.read()
+
+print(f.closed)
