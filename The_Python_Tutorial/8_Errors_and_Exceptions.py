@@ -7,3 +7,15 @@
 #print(4 + spam)
 #NameError
 
+x = input('enter int >> ')
+while True:
+    try:
+        y = x % 2
+        print(y)
+        break
+    except ValueError:
+        print("Try again....")
+        break
+    except TypeError:
+        print('NoonoType')
+        break
