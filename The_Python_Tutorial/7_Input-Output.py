@@ -53,5 +53,8 @@ with open('workfile') as f:
     read_data = f.read()
 
 print(f.closed)
-
 print(read_data)
+
+with open('workfile') as f:
+    for line in f:
+        print(line, end='')
