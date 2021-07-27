@@ -3,6 +3,7 @@ class Node:
         self.data = data
         self.next = next
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -18,3 +19,28 @@ class LinkedList:
         while curr.next:
             curr = curr.next
         curr.next = Node(data, None)
+
+    def get_last_node(self):
+        n = self.head
+        while (n.next != None):
+            n = n.next
+        return n.data
+
+    def is_empty(self):
+        return self.head == None
+
+    def print_list(self):
+        n = self.head
+        while n != None:
+            print(n.data, end=" => ")
+            n = n.next
+        print()
+
+
+s = LinkedList()
+s.add_at_front(5)
+s.add_at_end(8)
+s.add_at_front(9)
+
+s.print_list()
+print(s.get_last_node())
