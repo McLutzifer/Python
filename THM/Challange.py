@@ -1,4 +1,6 @@
-from base64 import *
+# from base64 import *
+import base64
+import pybase64
 
 print("TEST")
 
@@ -12,5 +14,19 @@ print("TEST")
 file = open('encodedflag.txt', 'r')
 text = file.read()
 
+s = text.encode("UTF-8")
 
-encodedStr = base64encode(file.encode("utf-8"))
+for i in range (5):
+    encodedStr = base64.b64encode(s)
+    s = encodedStr
+
+for i in range (5):
+    encodedStr = base64.b32encode(s)
+    s = encodedStr
+
+
+for i in range (5):
+    encodedStr = base64.b16encode(s)
+    s = encodedStr
+
+print(s)
