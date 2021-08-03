@@ -14,8 +14,8 @@ def thm_base16(x):
     coded = base64.b16encode(x)
     return coded
 
-file = open('encodedflag.txt', 'r')
-text = file.read()
+file = open('encodedflag.txt', 'rb')
+flag = file.read()
 
 for i in range(5):
     flag = thm_base64(flag)
@@ -25,7 +25,6 @@ for i in range(5):
 
 for i in range(5):
     flag = thm_base64(flag)
-
-
-print(x)
+    if i == 4:
+        print(flag)
 
