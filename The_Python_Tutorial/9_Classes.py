@@ -42,3 +42,20 @@ class Complex:
 
 x = Complex(3.0, -4.5)
 print(x.r)
+
+
+
+# Class and Instance Variables
+
+class Dog:
+
+    kind = 'canine'
+
+    def __init__(self, name):
+        self.name = name
+
+d = Dog('Fido')
+e = Dog('Buddy')
+
+print(d.kind)
+print(e.name)
