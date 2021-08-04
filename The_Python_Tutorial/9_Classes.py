@@ -48,14 +48,20 @@ print(x.r)
 # Class and Instance Variables
 
 class Dog:
-
+    tricks = []
     kind = 'canine'
 
     def __init__(self, name):
         self.name = name
 
+    def add_tricks(self, trick):
+        self.tricks.append(trick)
+
 d = Dog('Fido')
 e = Dog('Buddy')
+d.add_tricks('roll over')
+print(e.tricks)
+print(d.tricks)
 
 print(d.kind)
 print(e.name)
