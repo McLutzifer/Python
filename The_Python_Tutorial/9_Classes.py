@@ -22,3 +22,14 @@ def scope_test():
 
 scope_test()
 print("In global scope:", spam)
+
+
+
+# Class Objects
+
+class MyClass:
+    """A simple example class"""
+    i = 12345
+
+    def f(self):
+        return 'hello world'
