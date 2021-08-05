@@ -79,3 +79,16 @@ print(w1.purpose, w1.region)
 w2 = Warehouse()
 w2.region = 'east'
 print(w2.purpose, w2.region)
+
+# Private Varibles
+
+class Mapping:
+    def __init__(self, iterable):
+        self.items_list =[]
+        self.__update(iterable)
+
+    def update(self, iterable):
+        for item in iterable:
+            self.items_list.append(item)
+
+    __update = update   # private copy of original update() method
