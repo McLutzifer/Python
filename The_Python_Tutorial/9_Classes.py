@@ -117,3 +117,13 @@ class Reverse:
             raise StopIteration
         self.index = self.index - 1
         return self.data[self.index]
+
+
+# Generator expressions
+
+print(sum(i*i for i in range(10)))
+xvec = [10, 20, 30]
+yvec = [7, 5, 3]
+print(sum(x*y for x,y in zip(xvec, yvec)))
+
+# unique_words = set(word for line in page for word in line.split())
