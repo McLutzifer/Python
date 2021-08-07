@@ -7,3 +7,11 @@ print(os.getcwd())
 
 import glob
 print(glob.glob('*.py'))
+
+
+# String pattern matching
+
+import re
+
+x = re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
+print(x)
