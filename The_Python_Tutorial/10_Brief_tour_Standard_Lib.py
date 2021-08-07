@@ -15,3 +15,9 @@ import re
 
 x = re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
 print(x)
+
+
+# Mathematics
+
+import random
+print(random.choice(['apple', 'pear', 'banana']))
