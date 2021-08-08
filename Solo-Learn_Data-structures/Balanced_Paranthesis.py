@@ -1,5 +1,23 @@
 def balanced(expression):
-    pass
+    
+    paranthesis = []
+    sum = 0
+
+    for letter in expression:
+        if letter == "(":
+            sum += 1
+            paranthesis.append(letter)
+        elif letter == ")":
+            sum -= 1
+            if paranthesis[-1] == "(":
+                paranthesis.pop()
+            else:
+                return 'False'
+    
+    if sum == 0:
+        return 'True'
+    else:
+        return 'False'
 
 
 test1 = '(ui)((uiuisdfds(df(dssds))))'
