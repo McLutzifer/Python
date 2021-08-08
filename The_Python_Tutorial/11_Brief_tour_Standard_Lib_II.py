@@ -64,3 +64,5 @@ d['primary'] = a    # does not create a reference
 print(d['primary']) # fetch the object if it is still alive
 del a 
 gc.collect()        # run garbge collection right away
+
+# print(d['primary']) # entry was automatically removed   -> Error
