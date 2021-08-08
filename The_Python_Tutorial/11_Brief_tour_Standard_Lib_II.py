@@ -1,4 +1,4 @@
-import reprlib, pprint, textwrap, locale
+import reprlib, pprint, textwrap, locale, time, os.path
 from string import Template
 
 print(reprlib.repr(set('supercalifragilisticexpialidocious')))
@@ -18,3 +18,24 @@ print(textwrap.fill(doc, width = 40))
 
 t = Template('${village}folk send $$10 to $cause.')
 print(t.substitute(village='Nottingham', cause = 'the ditch fund'))
+t = Template('return the $item to $owner.')
+d = dict(item = 'unladen swallow')
+
+
+photofiles = ['img_1074.jpg', 'img_1076.jpg', 'img_1077.jpg']
+
+class BatchRename(Template):
+    delimiter = '%'
+
+fmt = input('Enter rename style (%d-date %n-seqnum %f-format): ')
+
+p = BatchRename(fmt)
+date = time.strftime('%d%b%y')
+
+for i, filename in enumerate(photofiles):
+    base, ext = os.path.splitext(filename)
+    newname = p.substitute(d=date, n=i, f=ext)
+    print('{0} --> {1}'.format(filename, newname))
+
+# e.g. insert Ashley_%n%f
+
