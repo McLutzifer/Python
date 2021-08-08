@@ -1,4 +1,4 @@
-import reprlib, pprint, textwrap, locale, time, os.path
+import reprlib, pprint, textwrap, locale, time, os.path, struct
 from string import Template
 
 print(reprlib.repr(set('supercalifragilisticexpialidocious')))
@@ -27,6 +27,7 @@ photofiles = ['img_1074.jpg', 'img_1076.jpg', 'img_1077.jpg']
 class BatchRename(Template):
     delimiter = '%'
 
+'''
 fmt = input('Enter rename style (%d-date %n-seqnum %f-format): ')
 
 p = BatchRename(fmt)
@@ -39,3 +40,9 @@ for i, filename in enumerate(photofiles):
 
 # e.g. insert Ashley_%n%f
 
+'''
+
+# Logging
+import logging
+
+logging.debug('Debugging Information')
