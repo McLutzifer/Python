@@ -66,3 +66,11 @@ del a
 gc.collect()        # run garbge collection right away
 
 # print(d['primary']) # entry was automatically removed   -> Error
+
+
+# Tools for working with lists
+from array import array
+a = array('H', [4000, 10, 700, 22222])
+print(sum(a))
+print(a[1:30])
+
