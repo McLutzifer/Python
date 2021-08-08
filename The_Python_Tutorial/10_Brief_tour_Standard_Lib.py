@@ -27,3 +27,12 @@ import statistics
 data = [2.75, 1.75, 1.25, 0.5, 1.25, 3.5]
 print(statistics.mean(data))
 print(statistics.median(data))
+
+'''
+from urllib.request import urlopen
+with urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl') as response:
+    for line in response:
+        line = line.decode('utf-8')   # Decoding the binary data to text
+        if 'EST' in line or 'EDT' in line:   # look for eastern time
+            print(line)
+'''
