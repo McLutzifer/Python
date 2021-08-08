@@ -47,3 +47,9 @@ print(now)
 
 now = now.strftime("%m-%d-%y. %d %b %Y is a %A on the %d day of %B.")
 print(now)
+
+
+# Performance measurement 
+
+from timeit import Timer
+print(Timer('t=a; a=b; b=t', 'a=1; b=2').timeit())
