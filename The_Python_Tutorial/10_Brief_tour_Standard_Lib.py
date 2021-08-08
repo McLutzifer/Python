@@ -36,3 +36,11 @@ with urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl') as response:
         if 'EST' in line or 'EDT' in line:   # look for eastern time
             print(line)
 '''
+
+
+# Dates and Times
+
+from datetime import date
+
+now = date.today()
+print(now)
