@@ -9,7 +9,9 @@ def balanced(expression):
             paranthesis.append(letter)
         elif letter == ")":
             sum -= 1
-            if paranthesis[-1] == "(":
+            if len(paranthesis) == 0:
+                return 'False'
+            elif paranthesis[-1] == "(":
                 paranthesis.pop()
             else:
                 return 'False'
@@ -24,6 +26,6 @@ test1 = '(ui)((uiuisdfds(df(dssds))))'
 test2 = '(sdfdsfsd(dsfsfsd((sdfdsf())))'
 test3 = ') dsfdsf () ('
 
-balanced(test1)
-balanced(test2)
-balanced(test3)
+print(balanced(test1))
+print(balanced(test2))
+print(balanced(test3))
