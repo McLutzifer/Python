@@ -84,3 +84,7 @@ def breadth_first_search(unsearched):
             return m
         unsearched.append(m)"""
 
+import bisect
+scores = [(100, 'perl'), (200, 'tcl'), (400, 'lua'), (500, 'python')]
+bisect.insort(scores, (300, 'ruby'))
+print(scores)
