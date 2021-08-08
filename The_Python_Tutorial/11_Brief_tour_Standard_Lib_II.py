@@ -45,4 +45,22 @@ for i, filename in enumerate(photofiles):
 # Logging
 import logging
 
-logging.debug('Debugging Information')
+print(logging.debug('Debugging Information'))
+
+
+# Weak References
+
+import weakref, gc
+
+class A:
+    def __init__(self, value):
+        self.value = value
+    def __repr__(self):
+        return str(self.value)
+
+a = A(10)           # create a reference
+d = weakref.WeakValueDictionary()
+d['primary'] = a    # does not create a reference
+print(d['primary']) # fetch the object if it is still alive
+del a 
+gc.collect()        # run garbge collection right away
